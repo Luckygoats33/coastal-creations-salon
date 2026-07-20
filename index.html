@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Coastal Creations Salon | Depoe Bay, Oregon</title>
-<meta name="description" content="Premium hair, nails, and eyelash extensions on the Oregon Coast. 18 years of artistry. Now booking in Depoe Bay.">
+<title>The Nail Ladie | Depoe Bay, Oregon</title>
+<meta name="description" content="The Nail Ladie — premium nails, eyelash extensions, and hair on the Oregon Coast. 18 years of artistry. Now booking in Depoe Bay.">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -76,29 +76,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 64px;
 }
 
-.nav-logo { display: flex; align-items: center; gap: 14px; z-index: 101; }
+.nav-logo { display: flex; align-items: center; z-index: 101; }
 
-.nav-monogram {
-  width: 40px; height: 40px;
-  border: 1.5px solid rgba(255,255,255,0.7);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif);
-  font-size: 15px; font-style: italic;
-  letter-spacing: 1px; color: #fff;
-  transition: all 0.5s;
+.nav-logo-img {
+  height: 40px; width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter 0.5s;
 }
 
-.nav.scrolled .nav-monogram { border-color: var(--accent); color: var(--accent); }
-
-.nav-name {
-  font-family: var(--serif);
-  font-size: 1.1rem; font-weight: 400;
-  letter-spacing: 0.5px; color: #fff;
-  transition: color 0.5s;
-}
-
-.nav.scrolled .nav-name { color: var(--text); }
+.nav.scrolled .nav-logo-img { filter: none; }
 
 .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
 
@@ -771,8 +757,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- ===== NAVIGATION ===== -->
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">
-    <div class="nav-monogram">CC</div>
-    <span class="nav-name">Coastal Creations</span>
+    <img class="nav-logo-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260720_041112_5941239e-6ac2-4570-a644-4df0d96a0e7c.png" alt="The Nail Ladie">
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -792,7 +777,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Depoe Bay, Oregon</p>
-    <h1 class="hero-title">Coastal<br><em>Creations</em></h1>
+    <h1 class="hero-title">The Nail<br><em>Ladie</em></h1>
     <p class="hero-sub">Hair &middot; Nails &middot; Eyelash Extensions</p>
     <a href="https://www.vagaro.com/thenailladie" target="_blank" class="hero-cta">Book Your Appointment</a>
   </div>
@@ -806,12 +791,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="section-max">
     <div class="about-grid">
       <div class="about-image reveal from-left">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033712_b3e80403-fb7d-45d5-a64b-275161bdaa1b.png" alt="Coastal Creations Salon interior">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033712_b3e80403-fb7d-45d5-a64b-275161bdaa1b.png" alt="The Nail Ladie salon interior">
       </div>
       <div class="about-text">
         <p class="eyebrow reveal from-bottom">About</p>
         <h2 class="section-heading reveal from-bottom delay-1">18 Years of <em>Artistry</em></h2>
-        <p class="reveal from-bottom delay-2">Coastal Creations Salon is the vision of Heather, a seasoned nail artist and lash technician who has spent nearly two decades perfecting her craft. Every set is a custom creation — designed with you, for you.</p>
+        <p class="reveal from-bottom delay-2">The Nail Ladie is the vision of Heather, a seasoned nail artist and lash technician who has spent nearly two decades perfecting her craft. Every set is a custom creation — designed with you, for you.</p>
         <p class="reveal from-bottom delay-3">Located in the heart of Depoe Bay on the stunning Oregon Coast, our intimate salon offers a one-on-one experience where you're never just another appointment. You're the only one in the chair.</p>
         <div class="about-stats reveal from-bottom delay-4">
           <div>
@@ -980,7 +965,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="opening-content">
     <p class="eyebrow reveal from-bottom">Now Open</p>
     <div class="opening-date reveal from-scale delay-1">July 27<em>Grand Opening</em></div>
-    <p class="opening-sub reveal from-bottom delay-2">Join us as we open our doors in beautiful Depoe Bay. Book your first appointment and experience the Coastal Creations difference.</p>
+    <p class="opening-sub reveal from-bottom delay-2">Join us as we open our doors in beautiful Depoe Bay. Book your first appointment and experience The Nail Ladie difference.</p>
     <a href="https://www.vagaro.com/thenailladie" target="_blank" class="opening-cta reveal from-bottom delay-3">Reserve Your Spot</a>
   </div>
 </section>
@@ -1036,8 +1021,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-left">Coastal Creations Salon</div>
-    <div class="footer-right">&copy; 2026 Coastal Creations Salon &middot; Depoe Bay, Oregon</div>
+    <div class="footer-left">The Nail Ladie</div>
+    <div class="footer-right">&copy; 2026 The Nail Ladie &middot; Depoe Bay, Oregon</div>
   </div>
 </footer>
 
