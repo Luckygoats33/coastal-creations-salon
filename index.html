@@ -229,7 +229,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .nav-logo-img {
   height: 60px; width: auto;
-  filter: brightness(0) invert(1);
   transition: filter 0.5s;
 }
 
@@ -239,9 +238,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .nav-links a {
   font-size: 0.75rem; letter-spacing: 1.5px;
-  text-transform: uppercase; color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  transition: color 0.3s, text-shadow 0.3s; position: relative;
+  text-transform: uppercase; color: var(--text-mid);
+  transition: color 0.3s; position: relative;
 }
 
 .nav-links a::after {
@@ -269,12 +267,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .nav-hamburger span {
   display: block; width: 26px; height: 2.5px;
-  background: #fff;
+  background: var(--text);
   border-radius: 2px;
   transition: all 0.3s var(--ease);
   transform-origin: center;
 }
-.nav.scrolled .nav-hamburger span { background: var(--text); }
 .nav-hamburger.active span { background: #fff; }
 .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
 .nav-hamburger.active span:nth-child(2) { opacity: 0; }
@@ -330,13 +327,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .nav-book {
   font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
-  padding: 11px 26px; border: 1px solid rgba(255,255,255,0.5);
-  color: #fff; transition: all 0.3s var(--ease);
+  padding: 11px 26px; border: 1px solid var(--accent);
+  color: var(--accent); transition: all 0.3s var(--ease);
 }
 
-.nav-book:hover { background: #fff; color: var(--text); border-color: #fff; }
-.nav.scrolled .nav-book { border-color: var(--accent); color: var(--accent); }
-.nav.scrolled .nav-book:hover { background: var(--accent); color: #fff; }
+.nav-book:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
 /* ========================================
    HERO — VIDEO + IMAGE FALLBACK
