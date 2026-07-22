@@ -55,6 +55,76 @@
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.7; }
 a { color: inherit; text-decoration: none; }
+img, video { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* NAV */
+.page-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 60px; background: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+.pn-logo {
+  font-family: var(--serif); font-size: 1.1rem; color: var(--accent);
+  font-style: italic;
+}
+.pn-links { display: flex; align-items: center; gap: 2rem; }
+.pn-links a {
+  font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-mid); transition: color 0.3s; position: relative;
+}
+.pn-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--accent); transition: width 0.3s;
+}
+.pn-links a:hover { color: var(--accent); }
+.pn-links a:hover::after, .pn-links a.active::after { width: 100%; }
+.pn-links a.active { color: var(--accent); }
+.pn-book {
+  background: var(--accent) !important; color: #fff !important;
+  padding: 8px 20px !important; font-size: 0.65rem !important;
+  letter-spacing: 2px; text-transform: uppercase;
+  transition: background 0.3s !important;
+}
+.pn-book::after { display: none !important; }
+.pn-book:hover { background: var(--accent-hover) !important; }
+
+.pn-hamburger {
+  display: none; flex-direction: column; gap: 5px; padding: 8px;
+  z-index: 101;
+}
+.pn-hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--accent); transition: all 0.3s;
+}
+.pn-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.pn-hamburger.active span:nth-child(2) { opacity: 0; }
+.pn-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.pn-mobile {
+  display: none; position: fixed; inset: 0; z-index: 99;
+  background: linear-gradient(170deg, #0D2F3F 0%, #1B6B6A 40%, #2A4F6B 100%);
+  flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.pn-mobile.active { opacity: 1; pointer-events: all; }
+.pn-mobile a {
+  font-size: 1.1rem; color: rgba(255,255,255,0.8); letter-spacing: 2px;
+  text-transform: uppercase; transition: color 0.3s;
+}
+.pn-mobile a:hover { color: #fff; }
+.pn-mobile .mm-book {
+  margin-top: 1rem; background: rgba(255,255,255,0.15);
+  padding: 12px 32px; border: 1px solid rgba(255,255,255,0.3);
+}
+
+@media (max-width: 767px) {
+  .pn-links { display: none; }
+  .pn-hamburger { display: flex; }
+  .pn-mobile { display: flex; }
+}
 
 .faq-header {
   background: linear-gradient(170deg, #0D2F3F 0%, var(--accent) 50%, var(--ocean) 100%);
@@ -70,13 +140,6 @@ a { color: inherit; text-decoration: none; }
   height: clamp(30px, 5vw, 60px);
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,20 C480,55 960,5 1440,35 L1440,60 L0,60 Z' fill='%23FAF9F6'/%3E%3C/svg%3E") no-repeat bottom/100% 100%;
 }
-.faq-header .back-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase;
-  color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;
-  transition: color 0.3s;
-}
-.faq-header .back-link:hover { color: #fff; }
 .faq-header h1 {
   font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 400; margin-bottom: 0.5rem;
@@ -166,30 +229,68 @@ a { color: inherit; text-decoration: none; }
 .cta-btn.secondary:hover { background: var(--accent); color: #fff; }
 
 .faq-footer {
-  background: linear-gradient(180deg, #0D2F3F 0%, #0A1F2B 100%);
-  padding: 2rem clamp(1.5rem, 5vw, 4rem);
-  text-align: center;
-  border-top: 2px solid var(--accent);
+  background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 30%, #2A7B6B 60%, #0D3F4F 100%);
+  position: relative; overflow: hidden;
 }
-.faq-footer p {
-  font-size: 0.65rem; letter-spacing: 1px;
-  color: rgba(126,200,200,0.5); text-transform: uppercase;
+.footer-content {
+  max-width: 1200px; margin: 0 auto;
+  padding: 3rem clamp(1.5rem, 5vw, 4rem) 2rem;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem;
 }
-.faq-footer a { color: var(--seafoam); }
+.footer-brand { font-family: var(--serif); }
+.footer-brand-name { font-size: 1.4rem; color: #fff; margin-bottom: 0.6rem; }
+.footer-brand p { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 260px; }
+.footer-col h4 { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--seafoam); margin-bottom: 1rem; }
+.footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.7); padding: 0.3rem 0; transition: color 0.3s, transform 0.3s; }
+.footer-col a:hover { color: #fff; transform: translateX(4px); }
+.footer-social { display: flex; gap: 0.8rem; margin-top: 1rem; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s; padding: 0; }
+.footer-social a:hover { background: var(--seafoam); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(126,200,200,0.3); }
+.footer-social svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 1.5; }
+.footer-social a:hover svg { stroke: #0D3F4F; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding: 1.2rem clamp(1.5rem, 5vw, 4rem); border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 1px; text-transform: uppercase; }
 
 @media (max-width: 767px) {
-  .faq-header { padding: 2.5rem 1.2rem 2rem; }
+  .faq-header { padding: calc(60px + 1.5rem) 1.2rem 2rem; }
   .faq-header h1 { font-size: 1.8rem; }
   .faq-item summary { font-size: 0.88rem; padding: 0.85rem 1rem; }
   .faq-item p { padding: 0 1rem 0.85rem; font-size: 0.85rem; }
   .faq-cta { padding: 2rem 1.2rem; }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; text-align: center; }
+  .footer-brand p { max-width: 100%; margin: 0 auto; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<div class="faq-header">
-  <a href="index.html" class="back-link">&larr; Back to The Nail Ladie</a>
+<nav class="page-nav">
+  <a href="index.html" class="pn-logo">The Nail Ladie</a>
+  <div class="pn-links">
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="faq.html" class="active">FAQ</a>
+    <a href="visit.html">Visit</a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" class="pn-book">Book Now</a>
+  </div>
+  <button class="pn-hamburger" aria-label="Menu" onclick="this.classList.toggle('active');document.getElementById('pn-mobile').classList.toggle('active');document.body.style.overflow=document.getElementById('pn-mobile').classList.contains('active')?'hidden':''">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="pn-mobile" id="pn-mobile">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMobileMenu()">Gallery</a>
+  <a href="reviews.html" onclick="closeMobileMenu()">Reviews</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="visit.html" onclick="closeMobileMenu()">Visit</a>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" onclick="closeMobileMenu()" class="mm-book">Book Now</a>
+</div>
+
+<div class="faq-header" style="padding-top:calc(60px + 2rem);">
   <h1>Frequently <em>Asked</em></h1>
   <p>Everything you need to know about nail services, lashes, hair, and visiting our Depoe Bay salon.</p>
 </div>
@@ -418,9 +519,30 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
-<div class="faq-footer">
-  <p>&copy; 2026 The Nail Ladie &middot; 4040 N Highway 101, Depoe Bay, Oregon 97341 &middot; <a href="index.html">Home</a></p>
-</div>
+<footer class="faq-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-brand-name">The Nail Ladie</div>
+      <p>Premium nails, lashes & hair on the Oregon Coast. 18 years of artistry in Depoe Bay.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/coastalcreationssalon" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+        <a href="https://www.vagaro.com/thenailladie" target="_blank" aria-label="Vagaro"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="faq.html">FAQ</a></div>
+    <div class="footer-col"><h4>Visit</h4><a href="visit.html">Location & Hours</a><a href="https://maps.google.com/?q=4040+N+Highway+101+Depoe+Bay+OR" target="_blank">Directions</a><a href="tel:+15419921887">(541) 992-1887</a></div>
+    <div class="footer-col"><h4>Book</h4><a href="https://www.vagaro.com/thenailladie" target="_blank">Book Online</a><a href="tel:+15419921887">Call to Book</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 The Nail Ladie &middot; Depoe Bay, Oregon</span><span>4040 N Highway 101, Depoe Bay, OR 97341</span></div>
+</footer>
 
+<script>
+function closeMobileMenu() {
+  document.querySelector('.pn-hamburger')?.classList.remove('active');
+  document.getElementById('pn-mobile')?.classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
 </body>
 </html>

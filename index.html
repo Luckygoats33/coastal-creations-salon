@@ -864,28 +864,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
 }
 .coast-break img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  position: absolute; inset: -10%;
+  width: 120%; height: 120%;
   object-fit: cover;
   object-position: center 40%;
+  animation: oceanMotion 20s ease-in-out infinite alternate;
+}
+@keyframes oceanMotion {
+  0% { transform: scale(1) translateX(-1%); }
+  50% { transform: scale(1.04) translateX(0.5%); }
+  100% { transform: scale(1.02) translateX(1%); }
 }
 .coast-break-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13,47,63,0.4) 0%,
-    rgba(27,107,106,0.2) 50%,
-    rgba(13,47,63,0.4) 100%
+    rgba(13,47,63,0.25) 0%,
+    rgba(27,107,106,0.1) 50%,
+    rgba(13,47,63,0.25) 100%
   );
-}
-.coast-break-text {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-family: var(--serif);
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  font-style: italic; letter-spacing: 2px;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-  z-index: 2;
 }
 
 /* ========================================
@@ -1018,25 +1015,97 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    FOOTER
    ======================================== */
 .footer {
-  background: linear-gradient(180deg, #0D2F3F 0%, #0A1F2B 100%);
-  padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
-  border-top: 2px solid var(--accent);
+  background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 30%, #2A7B6B 60%, #0D3F4F 100%);
+  position: relative;
+  overflow: hidden;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: clamp(40px, 6vw, 70px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C240,60 480,10 720,40 C960,70 1200,20 1440,45 L1440,0 L0,0 Z' fill='%23111111'/%3E%3C/svg%3E") no-repeat top/100% 100%;
+}
+.footer-wave-anim {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  overflow: hidden;
+  opacity: 0.15;
+}
+.footer-wave-anim svg {
+  position: absolute;
+  width: 200%; height: 100%;
+  animation: footerWave 8s linear infinite;
+}
+@keyframes footerWave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.footer-inner {
+.footer-content {
+  position: relative; z-index: 1;
   max-width: 1200px; margin: 0 auto;
+  padding: clamp(4rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem) 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-brand {
+  font-family: var(--serif);
+}
+.footer-brand-name {
+  font-size: 1.4rem; color: #fff;
+  margin-bottom: 0.6rem;
+}
+.footer-brand p {
+  font-size: 0.8rem; color: rgba(255,255,255,0.6);
+  line-height: 1.6; max-width: 260px;
+}
+
+.footer-col h4 {
+  font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--seafoam); margin-bottom: 1rem;
+}
+.footer-col a {
+  display: block; font-size: 0.85rem; color: rgba(255,255,255,0.7);
+  padding: 0.3rem 0; transition: color 0.3s, transform 0.3s;
+}
+.footer-col a:hover {
+  color: #fff; transform: translateX(4px);
+}
+
+.footer-social {
+  display: flex; gap: 0.8rem; margin-top: 1rem;
+}
+.footer-social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s; padding: 0;
+}
+.footer-social a:hover {
+  background: var(--seafoam); transform: translateY(-3px) translateX(0);
+  box-shadow: 0 4px 15px rgba(126,200,200,0.3);
+}
+.footer-social svg {
+  width: 16px; height: 16px;
+  stroke: #fff; fill: none; stroke-width: 1.5;
+}
+.footer-social a:hover svg { stroke: #0D3F4F; }
+
+.footer-bottom {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto;
+  padding: 1.2rem clamp(1.5rem, 5vw, 4rem);
+  border-top: 1px solid rgba(255,255,255,0.1);
   display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.65rem; color: rgba(255,255,255,0.35);
+  letter-spacing: 1px; text-transform: uppercase;
 }
-
-.footer-left {
-  font-family: var(--serif); font-size: 0.85rem;
-  color: var(--seafoam);
-}
-
-.footer-right {
-  font-size: 0.65rem; letter-spacing: 1px;
-  color: rgba(126,200,200,0.5); text-transform: uppercase;
-}
+.footer-bottom a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
+.footer-bottom a:hover { color: var(--seafoam); }
 
 /* ========================================
    MOBILE CTA BAR
@@ -1133,7 +1202,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .location-grid { grid-template-columns: 1fr; }
   .location-map { aspect-ratio: 16/10; }
 
-  .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; text-align: center; }
+  .footer-brand p { max-width: 100%; margin: 0 auto; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 
   .mobile-cta { display: block; }
   body { padding-bottom: 76px; }
@@ -1506,7 +1579,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <div class="coast-break">
   <img loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044253_e01609f6-16bc-4053-9c74-3f0aa9af774c.png" alt="Aerial view of the Central Oregon Coast near Depoe Bay">
   <div class="coast-break-overlay"></div>
-  <div class="coast-break-text">Beauty Inspired by the Oregon Coast</div>
 </div>
 
 <!-- ===== REVIEWS ===== -->
@@ -1542,7 +1614,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <div class="coast-break">
   <img loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044302_c72c8dd2-9069-4048-9e62-5c11afcd1e81.png" alt="Oregon Coast tidepools at sunset near Depoe Bay">
   <div class="coast-break-overlay"></div>
-  <div class="coast-break-text">Depoe Bay &mdash; Whale Watching Capital of Oregon</div>
 </div>
 
 <!-- ===== GRAND OPENING ===== -->
@@ -1651,9 +1722,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-left">The Nail Ladie</div>
-    <div class="footer-right">&copy; 2026 The Nail Ladie &middot; Depoe Bay, Oregon</div>
+  <div class="footer-wave-anim">
+    <svg viewBox="0 0 2880 60" preserveAspectRatio="none">
+      <path d="M0,30 C240,50 480,10 720,30 C960,50 1200,10 1440,30 C1680,50 1920,10 2160,30 C2400,50 2640,10 2880,30 L2880,60 L0,60 Z" fill="rgba(255,255,255,0.3)"/>
+    </svg>
+  </div>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-brand-name">The Nail Ladie</div>
+      <p>Premium nails, lashes & hair on the Oregon Coast. 18 years of artistry in a private, one-on-one salon experience in beautiful Depoe Bay.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/coastalcreationssalon" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+        <a href="https://www.vagaro.com/thenailladie" target="_blank" aria-label="Vagaro">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="services.html">Services &amp; Pricing</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <a href="visit.html">Location &amp; Hours</a>
+      <a href="https://maps.google.com/?q=4040+N+Highway+101+Depoe+Bay+OR" target="_blank">Get Directions</a>
+      <a href="tel:+15419921887">(541) 992-1887</a>
+    </div>
+    <div class="footer-col">
+      <h4>Book</h4>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank">Book Online</a>
+      <a href="tel:+15419921887">Call to Book</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 The Nail Ladie &middot; Depoe Bay, Oregon</span>
+    <span>4040 N Highway 101, Depoe Bay, OR 97341</span>
   </div>
 </footer>
 

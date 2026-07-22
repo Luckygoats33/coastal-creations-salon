@@ -1,0 +1,640 @@
+<title>Visit Us | The Nail Ladie — Depoe Bay, Oregon Coast Nail Salon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Visit The Nail Ladie at 4040 N Highway 101, Depoe Bay, Oregon. Open Wed-Sat 8 AM - 6:45 PM. Directions from Portland, Eugene, Lincoln City & Newport. Oregon Coast nail salon.">
+<meta name="keywords" content="nail salon Depoe Bay, Oregon Coast nails, manicure pedicure Depoe Bay, The Nail Ladie, nail salon Highway 101">
+<link rel="canonical" href="https://luckygoats33.github.io/coastal-creations-salon/visit.html">
+<meta property="og:title" content="Visit Us | The Nail Ladie — Depoe Bay, Oregon Coast Nail Salon">
+<meta property="og:description" content="Visit The Nail Ladie at 4040 N Highway 101, Depoe Bay, Oregon. Open Wed-Sat 8 AM - 6:45 PM. Walk-ins welcome.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luckygoats33.github.io/coastal-creations-salon/visit.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NailSalon",
+  "name": "The Nail Ladie",
+  "image": "https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_045527_98375c98-53fe-4c57-8e4e-10daa1ef5bfd.png",
+  "url": "https://luckygoats33.github.io/coastal-creations-salon/",
+  "telephone": "+15419921887",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4040 N Highway 101",
+    "addressLocality": "Depoe Bay",
+    "addressRegion": "OR",
+    "postalCode": "97341",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.8085,
+    "longitude": -124.0584
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "18:45"
+    }
+  ],
+  "priceRange": "$$",
+  "areaServed": ["Depoe Bay", "Lincoln City", "Newport", "Otter Rock", "Central Oregon Coast"]
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FAF9F6;
+    --accent: #1B6B6A;
+    --accent-hover: #248F8D;
+    --accent-light: #D4EEEE;
+    --warm: #C4A06E;
+    --seafoam: #7EC8C8;
+    --ocean: #2A4F6B;
+    --text: #1A1A1A;
+    --text-mid: #555;
+    --font-heading: Georgia, 'Palatino Linotype', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: #fff;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(16px, 4vw, 40px);
+    box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  }
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-mid);
+    font-size: .9rem; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+  .nav-links .btn-book {
+    background: var(--accent); color: #fff !important;
+    padding: 8px 20px; border-radius: 6px;
+    font-weight: 600; transition: background .2s;
+  }
+  .nav-links .btn-book:hover { background: var(--accent-hover); }
+
+  .hamburger {
+    display: none; background: none; border: none; cursor: pointer;
+    width: 28px; height: 22px; position: relative; z-index: 1100;
+  }
+  .hamburger span {
+    display: block; height: 2px; width: 100%;
+    background: var(--accent); border-radius: 2px;
+    position: absolute; left: 0; transition: .3s;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 10px; }
+  .hamburger span:nth-child(3) { top: 20px; }
+  .hamburger.open span:nth-child(1) { top: 10px; transform: rotate(45deg); background: #fff; }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { top: 10px; transform: rotate(-45deg); background: #fff; }
+
+  .mobile-menu {
+    display: none; position: fixed; inset: 0; z-index: 1050;
+    background: linear-gradient(160deg, #0D2F3F 0%, #1B6B6A 50%, #2A4F6B 100%);
+    flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: #fff; text-decoration: none;
+    font-family: var(--font-heading); font-size: 1.4rem;
+    opacity: .9; transition: opacity .2s;
+  }
+  .mobile-menu a:hover { opacity: 1; }
+  .mobile-menu .btn-book-mobile {
+    margin-top: 12px; background: var(--warm); color: #fff;
+    padding: 14px 36px; border-radius: 8px;
+    font-family: var(--sans); font-weight: 600; font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    margin-top: 60px;
+    height: 350px;
+    background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_045527_98375c98-53fe-4c57-8e4e-10daa1ef5bfd.png') center/cover no-repeat;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(13,47,63,.55);
+  }
+  .hero-content { position: relative; z-index: 1; padding: 0 20px; }
+  .hero h1 {
+    font-family: var(--font-heading);
+    color: #fff; font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 10px; font-weight: 700;
+  }
+  .hero p {
+    color: rgba(255,255,255,.9); font-size: clamp(.95rem, 2vw, 1.15rem);
+    max-width: 520px; margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .hero { height: 250px; }
+  }
+
+  /* ─── SECTIONS ─── */
+  .section { padding: 60px clamp(16px, 5vw, 80px); max-width: 1100px; margin: 0 auto; }
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--ocean);
+    margin-bottom: 8px;
+    position: relative; display: inline-block;
+  }
+  .section-title::after {
+    content: ''; display: block;
+    width: 50px; height: 3px;
+    background: var(--warm); border-radius: 3px;
+    margin-top: 8px;
+  }
+  .section-subtitle {
+    color: var(--text-mid); font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  /* ─── HOURS & CONTACT ─── */
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .hours-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .hours-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  }
+  .hours-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .hours-table { width: 100%; border-collapse: collapse; }
+  .hours-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: .95rem;
+  }
+  .hours-table tr:last-child td { border-bottom: none; }
+  .hours-table .day { font-weight: 600; color: var(--text); width: 50%; }
+  .hours-table .time { color: var(--text-mid); text-align: right; }
+  .hours-table .closed { color: #999; font-style: italic; }
+
+  .contact-row {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 20px; padding: 12px 0;
+  }
+  .contact-row + .contact-row { border-top: 1px solid #eee; }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 18px; height: 18px; fill: var(--accent); }
+  .contact-row a {
+    color: var(--accent); text-decoration: none; font-weight: 600;
+    transition: color .2s;
+  }
+  .contact-row a:hover { color: var(--accent-hover); }
+  .contact-row .label { font-size: .8rem; color: var(--text-mid); display: block; }
+
+  .map-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    background: #e8e8e8;
+  }
+  .map-wrap iframe {
+    width: 100%; height: 360px; border: 0; display: block;
+  }
+
+  /* ─── DIRECTIONS ─── */
+  .directions-list { display: grid; gap: 20px; }
+  .direction-card {
+    background: #fff; border-radius: 10px; padding: 24px 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    border-left: 4px solid var(--seafoam);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .direction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,.09);
+  }
+  .direction-card h4 {
+    font-family: var(--font-heading);
+    color: var(--ocean);
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  .direction-card p { color: var(--text-mid); font-size: .95rem; }
+  .parking-note {
+    margin-top: 24px; padding: 20px 24px;
+    background: var(--accent-light); border-radius: 10px;
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .parking-note svg { width: 22px; height: 22px; fill: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .parking-note p { color: var(--text); font-size: .95rem; font-weight: 500; }
+
+  /* ─── ABOUT DEPOE BAY ─── */
+  .about-bay {
+    background: linear-gradient(135deg, var(--accent-light) 0%, #e8f6f6 100%);
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 20px;
+  }
+  .about-bay h2 {
+    font-family: var(--font-heading);
+    color: var(--ocean);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin-bottom: 16px;
+  }
+  .about-bay h2::after {
+    content: ''; display: block;
+    width: 50px; height: 3px;
+    background: var(--warm); border-radius: 3px;
+    margin-top: 8px;
+  }
+  .about-bay p {
+    color: var(--text); font-size: 1rem;
+    margin-bottom: 14px; line-height: 1.7;
+  }
+  .about-bay p:last-child { margin-bottom: 0; }
+  .about-highlights {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-top: 24px;
+  }
+  .highlight-chip {
+    background: #fff; border-radius: 8px; padding: 14px 18px;
+    text-align: center; font-size: .9rem; font-weight: 600;
+    color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    text-align: center; padding: 60px 20px;
+    background: #fff;
+  }
+  .cta-section h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--ocean);
+    margin-bottom: 10px;
+  }
+  .cta-section p {
+    color: var(--text-mid);
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: #fff;
+    padding: 14px 36px; border-radius: 8px; border: none;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: background .2s, transform .15s;
+  }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--accent);
+    padding: 14px 36px; border-radius: 8px;
+    border: 2px solid var(--accent);
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: background .2s, color .2s, transform .15s;
+  }
+  .btn-secondary:hover {
+    background: var(--accent); color: #fff; transform: translateY(-1px);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    position: relative;
+    background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 30%, #2A7B6B 60%, #0D3F4F 100%);
+    color: #fff; padding: 60px clamp(16px, 5vw, 80px) 0;
+  }
+  .footer-wave {
+    position: absolute; top: -40px; left: 0; width: 100%; height: 40px;
+    overflow: hidden;
+  }
+  .footer-wave svg { width: 100%; height: 100%; display: block; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    color: var(--seafoam);
+  }
+  .footer-col p, .footer-col a {
+    color: rgba(255,255,255,.8);
+    font-size: .9rem; line-height: 1.8;
+    text-decoration: none;
+    display: block;
+  }
+  .footer-col a:hover { color: #fff; }
+  .footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .footer-social { display: flex; gap: 12px; margin-top: 12px; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    border-radius: 50%; background: rgba(255,255,255,.12);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .footer-social a:hover { background: rgba(255,255,255,.25); }
+  .footer-social svg { width: 16px; height: 16px; fill: #fff; }
+  .footer-bottom {
+    margin-top: 40px; padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+    text-align: center; font-size: .82rem;
+    color: rgba(255,255,255,.5);
+    max-width: 1100px; margin-left: auto; margin-right: auto;
+  }
+</style>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">The Nail Ladie</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="visit.html" class="active">Visit</a></li>
+    <li><a href="book.html" class="btn-book">Book Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMobileMenu()">Gallery</a>
+  <a href="reviews.html" onclick="closeMobileMenu()">Reviews</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="visit.html" onclick="closeMobileMenu()">Visit</a>
+  <a href="book.html" class="btn-book-mobile" onclick="closeMobileMenu()">Book Now</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Visit Us</h1>
+    <p>4040 N Highway 101, Depoe Bay, Oregon 97341</p>
+  </div>
+</header>
+
+<!-- HOURS & CONTACT -->
+<section class="section" id="hours">
+  <h2 class="section-title">Hours &amp; Contact</h2>
+  <p class="section-subtitle">We look forward to welcoming you to the salon.</p>
+
+  <div class="hours-grid">
+    <div>
+      <div class="hours-card">
+        <h3>Salon Hours</h3>
+        <table class="hours-table">
+          <tr><td class="day">Wednesday</td><td class="time">8:00 AM &ndash; 6:45 PM</td></tr>
+          <tr><td class="day">Thursday</td><td class="time">8:00 AM &ndash; 6:45 PM</td></tr>
+          <tr><td class="day">Friday</td><td class="time">8:00 AM &ndash; 6:45 PM</td></tr>
+          <tr><td class="day">Saturday</td><td class="time">8:00 AM &ndash; 6:45 PM</td></tr>
+          <tr><td class="day">Sunday</td><td class="time closed">Closed</td></tr>
+          <tr><td class="day">Monday</td><td class="time closed">Closed</td></tr>
+          <tr><td class="day">Tuesday</td><td class="time closed">Closed</td></tr>
+        </table>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div>
+          <span class="label">Phone</span>
+          <a href="tel:+15419921887">(541) 992-1887</a>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <div>
+          <span class="label">Address</span>
+          <a href="https://maps.google.com/?q=4040+N+Highway+101,+Depoe+Bay,+OR+97341" target="_blank" rel="noopener">4040 N Highway 101, Depoe Bay, OR 97341</a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=4040+N+Highway+101,+Depoe+Bay,+OR+97341&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Nail Ladie location on Google Maps"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING HERE -->
+<section class="section" id="directions">
+  <h2 class="section-title">Getting Here</h2>
+  <p class="section-subtitle">Easy to find on Highway 101, right in the heart of Depoe Bay.</p>
+
+  <div class="directions-list">
+    <div class="direction-card">
+      <h4>From Portland (approx. 2 hours)</h4>
+      <p>Take I-5 South to Salem, then OR-22 West to OR-18 West, then US-101 South to Depoe Bay.</p>
+    </div>
+    <div class="direction-card">
+      <h4>From Eugene (approx. 2.5 hours)</h4>
+      <p>Take OR-126 West to Florence, then US-101 North to Depoe Bay.</p>
+    </div>
+    <div class="direction-card">
+      <h4>From Lincoln City (approx. 15 min)</h4>
+      <p>Head south on US-101. The salon is on the right as you enter Depoe Bay.</p>
+    </div>
+    <div class="direction-card">
+      <h4>From Newport (approx. 15 min)</h4>
+      <p>Head north on US-101. The salon is on the left just past the Depoe Bay Bridge.</p>
+    </div>
+  </div>
+
+  <div class="parking-note">
+    <svg viewBox="0 0 24 24"><path d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"/></svg>
+    <p>Free parking available right in front of the salon on Highway 101. Easy pull-in access with no meters or time limits.</p>
+  </div>
+</section>
+
+<!-- ABOUT DEPOE BAY -->
+<section class="section" id="about-depoe-bay">
+  <div class="about-bay">
+    <h2>Discover Depoe Bay</h2>
+    <p>Known as the <strong>Whale Watching Capital of the Oregon Coast</strong>, Depoe Bay is a charming coastal village nestled along Highway 101 between Lincoln City and Newport. The town sits atop dramatic basalt cliffs, offering some of the most breathtaking ocean views on the Pacific seaboard.</p>
+    <p>Step outside the salon and you are moments from iconic landmarks: the historic <strong>Depoe Bay Bridge</strong> spanning the world's smallest navigable harbor, the famous <strong>Spouting Horn</strong> where ocean swells blast skyward through rocky channels, and a fleet of <strong>whale watching charters</strong> that depart daily in search of resident gray whales.</p>
+    <p>We are just minutes from <strong>Lincoln City, Newport, Otter Rock, and the Central Oregon Coast's</strong> best beaches, tide pools, and seafood restaurants. Make a day of it: get your nails done at The Nail Ladie, then explore the coast. Grab chowder at a waterfront cafe, browse the galleries in Nye Beach, or watch the sunset from Boiler Bay State Scenic Viewpoint just up the road.</p>
+
+    <div class="about-highlights">
+      <div class="highlight-chip">Whale Watching Capital</div>
+      <div class="highlight-chip">Spouting Horn</div>
+      <div class="highlight-chip">Historic Bridge</div>
+      <div class="highlight-chip">Tide Pools &amp; Beaches</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="book">
+  <h2>Book Your Appointment</h2>
+  <p>Ready to treat yourself? Schedule your visit to The Nail Ladie today.</p>
+  <div class="cta-buttons">
+    <a href="book.html" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Online
+    </a>
+    <a href="tel:+15419921887" class="btn-secondary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call (541) 992-1887
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+      <path d="M0,20 C240,40 480,0 720,20 C960,40 1200,0 1440,20 L1440,40 L0,40 Z" fill="#0E4D5A"/>
+    </svg>
+  </div>
+
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">The Nail Ladie</div>
+      <p>Premium nail care on the beautiful Oregon Coast.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>4040 N Highway 101<br>Depoe Bay, OR 97341</p>
+      <a href="tel:+15419921887" style="margin-top:8px;">(541) 992-1887</a>
+      <p style="margin-top:8px;">Wed &ndash; Sat: 8 AM &ndash; 6:45 PM</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Book</h4>
+      <a href="book.html">Book Online</a>
+      <a href="tel:+15419921887">Call to Book</a>
+      <p style="margin-top:8px;">Walk-ins welcome<br>when available</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2026 The Nail Ladie. All rights reserved. Depoe Bay, Oregon.
+  </div>
+</footer>
+
+<script>
+  function toggleMobileMenu() {
+    var menu = document.getElementById('mobileMenu');
+    var btn = document.querySelector('.hamburger');
+    var isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function closeMobileMenu() {
+    var menu = document.getElementById('mobileMenu');
+    var btn = document.querySelector('.hamburger');
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close mobile menu on resize to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) closeMobileMenu();
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        closeMobileMenu();
+      }
+    });
+  });
+</script>
