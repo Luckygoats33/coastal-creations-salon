@@ -229,11 +229,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav-logo { display: flex; align-items: center; z-index: 101; }
 
 .nav-logo-img {
-  height: 60px; width: auto;
-  transition: filter 0.5s;
+  height: 100px; width: auto;
+  transition: all 0.5s;
 }
+.nav.scrolled .nav-logo-img { height: 55px; }
 
-.nav.scrolled .nav-logo-img { filter: none; }
+.nav.scrolled .nav-logo-img { filter: none; height: 55px; }
 
 .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
 
@@ -492,6 +493,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .section-max { max-width: 1200px; margin: 0 auto; }
 
+.section-cta {
+  text-align: center; margin-top: 3rem;
+}
+.section-cta a {
+  display: inline-block;
+  font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 14px 40px;
+  border: 2px solid var(--accent); color: var(--accent);
+  transition: all 0.4s var(--ease);
+}
+.section-cta a:hover {
+  background: var(--accent); color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(27,107,106,0.2);
+}
+.section-cta.dark a {
+  border-color: var(--seafoam); color: var(--seafoam);
+}
+.section-cta.dark a:hover {
+  background: var(--seafoam); color: var(--dark);
+}
+
 .eyebrow {
   font-size: 0.65rem; letter-spacing: 3.5px; text-transform: uppercase;
   color: var(--accent); margin-bottom: 1rem;
@@ -545,7 +568,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    ABOUT
    ======================================== */
 .about {
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -748,7 +771,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    REVIEWS
    ======================================== */
 .reviews {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 50%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 40%, var(--bg-alt) 100%);
   position: relative;
 }
 
@@ -1457,6 +1480,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
       </div>
     </div>
+    <div class="section-cta reveal from-bottom delay-5"><a href="visit.html">Learn More About Us &rarr;</a></div>
   </div>
 </section>
 
@@ -1509,6 +1533,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p class="service-note">Also offering Seint Beauty makeup artistry & color matching.</p>
       </div>
     </div>
+    <div class="section-cta dark reveal from-bottom delay-4"><a href="services.html">View Full Menu &rarr;</a></div>
   </div>
 </section>
 
@@ -1566,6 +1591,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
     </div>
+    <div class="section-cta reveal from-bottom"><a href="gallery.html">View Full Gallery &rarr;</a></div>
   </div>
 </section>
 
@@ -1603,6 +1629,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p class="review-author">Michelle T.</p>
       </div>
     </div>
+    <div class="section-cta reveal from-bottom"><a href="reviews.html">Read All Reviews &rarr;</a></div>
   </div>
 </section>
 
@@ -1664,9 +1691,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p>Yes — The Nail Ladie is an intimate, one-chair salon. You receive Heather's undivided attention for your entire appointment. No rush, no noise, no other clients. It's a truly personalized experience.</p>
       </details>
     </div>
-    <div style="text-align:center;margin-top:2.5rem;" class="reveal from-bottom">
-      <a href="faq.html" style="display:inline-block;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;padding:14px 36px;border:2px solid var(--accent);color:var(--accent);transition:all 0.3s;text-decoration:none;" onmouseover="this.style.background='var(--accent)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">View All FAQ &rarr;</a>
-    </div>
+    <div class="section-cta reveal from-bottom"><a href="faq.html">View All FAQ &rarr;</a></div>
   </div>
 </section>
 
@@ -1715,6 +1740,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <iframe src="https://maps.google.com/maps?q=4040+N+Highway+101,+Depoe+Bay,+OR+97341&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
+    <div class="section-cta dark reveal from-bottom"><a href="visit.html">Get Directions &amp; Details &rarr;</a></div>
   </div>
 </section>
 
