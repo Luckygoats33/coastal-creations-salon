@@ -366,6 +366,40 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   );
 }
 
+/* Coastal fog drift */
+.hero-fog {
+  position: absolute; inset: 0; z-index: 2;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.hero-fog::before,
+.hero-fog::after {
+  content: '';
+  position: absolute;
+  width: 200%; height: 100%;
+  top: 0; left: -50%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.08) 15%,
+    rgba(255,255,255,0.15) 30%,
+    transparent 45%,
+    rgba(255,255,255,0.06) 60%,
+    rgba(255,255,255,0.12) 75%,
+    transparent 100%
+  );
+  animation: fogDrift 25s linear infinite;
+}
+.hero-fog::after {
+  animation-delay: -12s;
+  animation-duration: 35s;
+  opacity: 0.6;
+  top: 20%;
+}
+@keyframes fogDrift {
+  from { transform: translateX(-25%); }
+  to { transform: translateX(25%); }
+}
+
 .hero-content {
   position: relative; z-index: 3;
   padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
@@ -941,9 +975,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    FOOTER
    ======================================== */
 .footer {
-  background: #0a0a0a;
+  background: linear-gradient(180deg, #0D2F3F 0%, #0A1F2B 100%);
   padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 2px solid var(--accent);
 }
 
 .footer-inner {
@@ -953,12 +987,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .footer-left {
   font-family: var(--serif); font-size: 0.85rem;
-  color: rgba(255,255,255,0.25);
+  color: var(--seafoam);
 }
 
 .footer-right {
   font-size: 0.65rem; letter-spacing: 1px;
-  color: rgba(255,255,255,0.15); text-transform: uppercase;
+  color: rgba(126,200,200,0.5); text-transform: uppercase;
 }
 
 /* ========================================
@@ -1031,15 +1065,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 767px) {
   .nav-links, .nav-book { display: none; }
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex; margin-top: 15px; }
   .mobile-menu { display: flex; }
-  .nav { height: 72px; }
-  .nav.scrolled { height: 60px; top: 0; }
-  .nav-logo-img { height: 90px; }
+  .nav { height: 80px; }
+  .nav.scrolled { height: 64px; top: 0; }
+  .nav.scrolled .nav-hamburger { margin-top: 0; }
+  .nav-logo-img { height: 100px; }
   .nav.scrolled .nav-logo-img { height: 50px; }
-  .top-bar { font-size: 0.6rem; gap: 0.8rem; padding: 5px 0.8rem; }
+  .top-bar { font-size: 0.7rem; gap: 1rem; padding: 7px 1rem; }
   .top-bar .tb-divider { display: none; }
-  .top-bar svg { width: 12px; height: 12px; }
+  .top-bar svg { width: 14px; height: 14px; }
 
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .about-text { max-width: 100%; }
@@ -1232,11 +1267,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 10h16M10 4v16"/></svg>
     Book Online
   </a>
-  <div class="tb-divider"></div>
-  <a href="https://maps.google.com/?q=4040+N+Highway+101+Depoe+Bay+OR" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    Depoe Bay, OR
-  </a>
 </div>
 
 <!-- ===== NAVIGATION ===== -->
@@ -1277,6 +1307,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </video>
   <img class="hero-media" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033616_839dfb88-bfba-4425-9785-898d826be2b7.png" alt="Elegant nails on Oregon Coast driftwood">
   <div class="hero-overlay"></div>
+  <div class="hero-fog"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Depoe Bay, Oregon</p>
     <h1 class="hero-title">The Nail<br><em>Ladie</em></h1>
@@ -1514,13 +1545,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <p>Yes — The Nail Ladie is an intimate, one-chair salon. You receive Heather's undivided attention for your entire appointment. No rush, no noise, no other clients. It's a truly personalized experience.</p>
       </details>
     </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal from-bottom">
+      <a href="faq.html" style="display:inline-block;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;padding:14px 36px;border:2px solid var(--accent);color:var(--accent);transition:all 0.3s;text-decoration:none;" onmouseover="this.style.background='var(--accent)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">View All FAQ &rarr;</a>
+    </div>
   </div>
 </section>
 
 <!-- Wave: light → dark -->
 <div class="wave-divider">
   <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;height:clamp(40px,6vw,80px)">
-    <path d="M0,20 C360,70 1080,10 1440,50 L1440,80 L0,80 Z" fill="#111111"/>
+    <path d="M0,20 C360,70 1080,10 1440,50 L1440,80 L0,80 Z" fill="#0D2F3F"/>
   </svg>
 </div>
 
