@@ -856,10 +856,53 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ========================================
+   COASTAL PHOTO BREAKS
+   ======================================== */
+.coast-break {
+  position: relative;
+  height: clamp(180px, 25vw, 300px);
+  overflow: hidden;
+}
+.coast-break img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.coast-break-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,47,63,0.4) 0%,
+    rgba(27,107,106,0.2) 50%,
+    rgba(13,47,63,0.4) 100%
+  );
+}
+.coast-break-text {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: var(--serif);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-style: italic; letter-spacing: 2px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+/* ========================================
    FAQ
    ======================================== */
 .faq {
   background: linear-gradient(180deg, var(--bg) 0%, var(--accent-light) 100%);
+  position: relative;
+}
+.faq::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 40%; height: 100%;
+  background: url("https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044302_cde47a8a-c3d0-4c97-a3b8-f89615273235.png") no-repeat center/cover;
+  opacity: 0.06;
+  pointer-events: none;
 }
 .faq .eyebrow { color: var(--warm); }
 .faq .section-heading { color: var(--dark); }
@@ -1459,11 +1502,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </section>
 
-<!-- Wave: alt → light -->
-<div class="wave-divider" style="background:var(--bg-alt)">
-  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;height:clamp(40px,6vw,80px)">
-    <path d="M0,30 C320,80 720,0 1440,50 L1440,80 L0,80 Z" fill="var(--bg)"/>
-  </svg>
+<!-- Oregon Coast Photo Break -->
+<div class="coast-break">
+  <img loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044253_e01609f6-16bc-4053-9c74-3f0aa9af774c.png" alt="Aerial view of the Central Oregon Coast near Depoe Bay">
+  <div class="coast-break-overlay"></div>
+  <div class="coast-break-text">Beauty Inspired by the Oregon Coast</div>
 </div>
 
 <!-- ===== REVIEWS ===== -->
@@ -1495,10 +1538,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </section>
 
+<!-- Oregon Coast Tidepool Break -->
+<div class="coast-break">
+  <img loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044302_c72c8dd2-9069-4048-9e62-5c11afcd1e81.png" alt="Oregon Coast tidepools at sunset near Depoe Bay">
+  <div class="coast-break-overlay"></div>
+  <div class="coast-break-text">Depoe Bay &mdash; Whale Watching Capital of Oregon</div>
+</div>
+
 <!-- ===== GRAND OPENING ===== -->
 <section class="opening">
   <div class="opening-bg">
-    <img loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033644_4c35677c-5f61-497c-9691-c3fec6a66f6f.png" alt="Oregon Coast sunset">
+    <img loading="lazy" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044254_6f999f9d-7610-41d3-bdd0-94e6e52aa6b8.png" alt="Oregon Coast aerial view at golden hour">
   </div>
   <div class="opening-content">
     <p class="eyebrow reveal from-bottom">Now Open</p>
