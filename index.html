@@ -207,6 +207,62 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav.scrolled .nav-links a { color: var(--text-mid); }
 .nav.scrolled .nav-links a:hover { color: var(--text); }
 
+/* Hamburger button (mobile only) */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 48px; height: 48px;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 101;
+  background: none; border: none;
+}
+.nav-hamburger span {
+  display: block; width: 100%; height: 2px;
+  background: #fff;
+  transition: all 0.3s var(--ease);
+  transform-origin: center;
+}
+.nav.scrolled .nav-hamburger span { background: var(--text); }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile menu overlay */
+.mobile-menu {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 99;
+  background: rgba(17, 17, 17, 0.97);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+.mobile-menu.active { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--warm); }
+.mobile-menu .mm-book {
+  margin-top: 1rem;
+  padding: 16px 40px;
+  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 .nav-book {
   font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
   padding: 11px 26px; border: 1px solid rgba(255,255,255,0.5);
@@ -874,6 +930,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 @media (max-width: 767px) {
   .nav-links, .nav-book { display: none; }
+  .nav-hamburger { display: flex; }
+  .mobile-menu { display: flex; }
   .nav { height: 64px; }
   .nav.scrolled { height: 56px; }
 
@@ -902,6 +960,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ========================================
+   REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ========================================
    CUSTOM SCROLLBAR
    ======================================== */
 ::-webkit-scrollbar { width: 5px; }
@@ -925,7 +995,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <li><a href="#visit">Visit</a></li>
   </ul>
   <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nav-book">Book Now</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');document.body.style.overflow=document.querySelector('.mobile-menu').classList.contains('active')?'hidden':''">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+  <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#visit" onclick="closeMobileMenu()">Visit</a>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="mm-book" onclick="closeMobileMenu()">Book Now</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -1239,6 +1323,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 </div>
 
 <script>
+// Mobile menu
+function closeMobileMenu() {
+  document.querySelector('.nav-hamburger').classList.remove('active');
+  document.querySelector('.mobile-menu').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 // Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
