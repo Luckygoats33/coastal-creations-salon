@@ -67,9 +67,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: 0 2px 20px rgba(0,0,0,0.08);
 }
 .pn-logo {
-  font-family: var(--serif); font-size: 1.1rem; color: var(--accent);
-  font-style: italic;
+  display: flex; align-items: center;
 }
+.pn-logo img { height: 45px; }
 .pn-links { display: flex; align-items: center; gap: 2rem; }
 .pn-links a {
   font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
@@ -267,7 +267,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <body>
 
 <nav class="page-nav">
-  <a href="index.html" class="pn-logo">The Nail Ladie</a>
+  <a href="index.html" class="pn-logo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie" style="height:45px;filter:brightness(0) invert(0);"></a>
   <div class="pn-links">
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
@@ -290,9 +290,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <a href="https://www.vagaro.com/thenailladie" target="_blank" onclick="closeMobileMenu()" class="mm-book">Book Now</a>
 </div>
 
-<div class="faq-header" style="padding-top:calc(60px + 2rem);">
-  <h1>Frequently <em>Asked</em></h1>
-  <p>Everything you need to know about nail services, lashes, hair, and visiting our Depoe Bay salon.</p>
+<div class="faq-header" style="padding-top:calc(60px + 2rem); position:relative; overflow:hidden;">
+  <video autoplay muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0;" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044253_e01609f6-16bc-4053-9c74-3f0aa9af774c.png">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_050806_1e5e5fa9-77aa-4d85-b652-786301a1453c.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute;inset:0;background:linear-gradient(170deg,rgba(14,77,90,0.85),rgba(27,107,106,0.8));z-index:1;"></div>
+  <h1 style="position:relative;z-index:2;">Frequently <em>Asked</em></h1>
+  <p style="position:relative;z-index:2;">Everything you need to know about nail services, lashes, hair, and visiting our Depoe Bay salon.</p>
 </div>
 
 <div class="faq-body">

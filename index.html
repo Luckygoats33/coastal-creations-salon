@@ -112,25 +112,25 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
-  --bg: #FAF9F6;
-  --bg-alt: #F0EBE3;
-  --bg-sand: #E8DFD3;
-  --text: #1A1A1A;
-  --text-mid: #555;
-  --text-light: #888;
+  --bg: #F4F9FA;
+  --bg-alt: #E3EEF0;
+  --bg-sand: #D4E6EA;
+  --text: #1A2A2E;
+  --text-mid: #456068;
+  --text-light: #6A8A92;
   --accent: #1B6B6A;
   --accent-hover: #248F8D;
   --accent-light: #D4EEEE;
-  --warm: #C4A06E;
-  --warm-light: #E8DED5;
-  --seafoam: #7EC8C8;
-  --ocean: #2A4F6B;
-  --driftwood: #8B7355;
-  --dark: #111111;
-  --dark-mid: #1A1A1A;
-  --dark-text: #F0EDE8;
-  --dark-text-mid: #A8A299;
-  --border: #DDD6CC;
+  --warm: #2E8B8B;
+  --warm-light: #C8E6E6;
+  --seafoam: #5EC4C4;
+  --ocean: #1A4B6B;
+  --driftwood: #3A7A82;
+  --dark: #0B1E24;
+  --dark-mid: #122A32;
+  --dark-text: #E0F0F2;
+  --dark-text-mid: #8AB4BE;
+  --border: #B8D4DA;
   --font-heading: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
   --serif: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -210,6 +210,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   justify-content: space-between;
   transition: all 0.5s var(--ease);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .nav.scrolled {
@@ -517,7 +520,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .services .section-heading::after,
 .location .section-heading::after,
 .opening .section-heading::after {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 6'%3E%3Cpath d='M0,3 C10,0 15,6 25,3 C35,0 40,6 50,3 C55,1 58,4 60,3' stroke='%23C4A06E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat center/contain;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 6'%3E%3Cpath d='M0,3 C10,0 15,6 25,3 C35,0 40,6 50,3 C55,1 58,4 60,3' stroke='%235EC4C4' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat center/contain;
 }
 
 /* Reveal animations */
@@ -671,7 +674,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    GALLERY — HORIZONTAL SCROLL
    ======================================== */
 .gallery {
-  background: linear-gradient(180deg, var(--bg-alt) 0%, #E5DED4 100%);
+  background: linear-gradient(180deg, var(--bg-alt) 0%, #D0E4E8 100%);
   position: relative;
   overflow: hidden;
 }

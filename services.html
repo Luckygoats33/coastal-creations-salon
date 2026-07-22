@@ -130,14 +130,9 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 1px 8px rgba(0,0,0,0.07);
 }
 .pn-logo {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
+  display: flex; align-items: center;
 }
-.pn-logo:hover { color: var(--accent-hover); }
+.pn-logo img { height: 45px; }
 .pn-links {
   display: flex;
   align-items: center;
@@ -272,6 +267,14 @@ img { max-width: 100%; height: auto; }
   position: absolute;
   inset: 0;
   background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_045523_38878341-ceb8-405d-9162-c53ee0478b8d.png') center/cover no-repeat;
+  z-index: 0;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 0;
 }
 .services-hero::after {
@@ -551,7 +554,7 @@ img { max-width: 100%; height: auto; }
 
 <!-- Navigation -->
 <nav class="page-nav">
-  <a href="index.html" class="pn-logo">The Nail Ladie</a>
+  <a href="index.html" class="pn-logo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie" style="height:45px;"></a>
   <div class="pn-links">
     <a href="services.html" class="active">Services</a>
     <a href="gallery.html">Gallery</a>
@@ -576,6 +579,9 @@ img { max-width: 100%; height: auto; }
 
 <!-- Hero Header -->
 <header class="services-hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_045523_38878341-ceb8-405d-9162-c53ee0478b8d.png">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_050806_1e5e5fa9-77aa-4d85-b652-786301a1453c.mp4" type="video/mp4">
+  </video>
   <div class="hero-content">
     <h1>Services &amp; Pricing</h1>
     <p>From perfectly polished nails to stunning lash extensions, every service is crafted with care on the beautiful Oregon coast.</p>

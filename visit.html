@@ -79,13 +79,9 @@
     box-shadow: 0 1px 6px rgba(0,0,0,.08);
   }
   .nav-logo {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: .02em;
+    display: flex; align-items: center;
   }
+  .nav-logo img { height: 45px; }
   .nav-links { display: flex; gap: 28px; list-style: none; }
   .nav-links a {
     text-decoration: none; color: var(--text-mid);
@@ -144,16 +140,24 @@
   .hero {
     margin-top: 60px;
     height: 350px;
-    background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_045527_98375c98-53fe-4c57-8e4e-10daa1ef5bfd.png') center/cover no-repeat;
     position: relative;
     display: flex; align-items: center; justify-content: center;
     text-align: center;
+    overflow: hidden;
+    background: #0d2f3f;
+  }
+  .hero-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
     background: rgba(13,47,63,.55);
+    z-index: 1;
   }
-  .hero-content { position: relative; z-index: 1; padding: 0 20px; }
+  .hero-content { position: relative; z-index: 2; padding: 0 20px; }
   .hero h1 {
     font-family: var(--font-heading);
     color: #fff; font-size: clamp(2rem, 5vw, 3rem);
@@ -410,7 +414,7 @@
 
 <!-- NAV -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo">The Nail Ladie</a>
+  <a href="index.html" class="nav-logo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie" style="height:45px;"></a>
   <ul class="nav-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="gallery.html">Gallery</a></li>
@@ -436,6 +440,10 @@
 
 <!-- HERO -->
 <header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+         poster="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_045527_98375c98-53fe-4c57-8e4e-10daa1ef5bfd.png">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_050811_6a2fe1d2-ad29-4cdf-9610-a62be6a9a760.mp4" type="video/mp4">
+  </video>
   <div class="hero-content">
     <h1>Visit Us</h1>
     <p>4040 N Highway 101, Depoe Bay, Oregon 97341</p>
