@@ -52,12 +52,17 @@
     --accent-hover: #248F8D;
     --accent-light: #D4EEEE;
     --warm: #C4A06E;
-    --seafoam: #7EC8C8;
+    --seafoam: #5EC4C4;
     --ocean: #2A4F6B;
     --text: #1A1A1A;
-    --text-mid: #555;
+    --text-mid: #456068;
+    --dark: #0B1E24;
+    --border: #B8D4DA;
     --font-heading: Georgia, 'Palatino Linotype', serif;
+    --serif: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   html { scroll-behavior: smooth; }
@@ -69,76 +74,187 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* ─── TOP BAR ─── */
+  .top-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 102;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    padding: 6px clamp(1rem, 3vw, 2rem);
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .top-bar a {
+    color: #fff;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.3s;
+  }
+  .top-bar a:hover { color: var(--seafoam); }
+  .top-bar svg {
+    width: 14px; height: 14px;
+    stroke: currentColor; fill: none; stroke-width: 1.5;
+  }
+  .top-bar .tb-divider {
+    width: 1px; height: 12px;
+    background: rgba(255,255,255,0.25);
+  }
+
   /* ─── NAV ─── */
   .nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    background: #fff;
-    height: 60px;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 clamp(16px, 4vw, 40px);
-    box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    position: fixed;
+    top: 30px; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.5s var(--ease);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
   }
-  .nav-logo {
-    display: flex; align-items: center;
+  .nav.scrolled {
+    top: 0;
+    background: rgba(250, 250, 248, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 1px 0 var(--border);
+    height: 64px;
   }
-  .nav-logo img { height: 56px; }
-  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .top-bar.hidden { transform: translateY(-100%); transition: transform 0.3s var(--ease); }
+
+  .nav-logo { display: flex; align-items: center; z-index: 101; }
+  .nav-logo-img {
+    height: 100px; width: auto;
+    transition: all 0.5s;
+  }
+  .nav.scrolled .nav-logo-img { height: 55px; }
+
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
   .nav-links a {
-    text-decoration: none; color: var(--text-mid);
-    font-size: .9rem; font-weight: 500;
-    transition: color .2s;
+    font-size: 0.75rem; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-mid);
+    transition: color 0.3s; position: relative;
+    text-decoration: none;
   }
-  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-  .nav-links a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
-  .nav-links .btn-book {
-    background: var(--accent); color: #fff !important;
-    padding: 8px 20px; border-radius: 6px;
-    font-weight: 600; transition: background .2s;
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: currentColor;
+    transition: width 0.3s var(--ease);
   }
-  .nav-links .btn-book:hover { background: var(--accent-hover); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a.active { color: var(--accent); }
+  .nav-links a.active::after { width: 100%; }
+  .nav.scrolled .nav-links a { color: var(--text-mid); text-shadow: none; }
+  .nav.scrolled .nav-links a:hover { color: var(--text); }
 
-  .hamburger {
-    display: none; background: none; border: none; cursor: pointer;
-    width: 28px; height: 22px; position: relative; z-index: 1100;
+  .nav-book {
+    font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+    padding: 11px 26px; border: 1px solid var(--accent);
+    color: var(--accent); transition: all 0.3s var(--ease);
+    text-decoration: none;
   }
-  .hamburger span {
-    display: block; height: 2px; width: 100%;
-    background: var(--accent); border-radius: 2px;
-    position: absolute; left: 0; transition: .3s;
-  }
-  .hamburger span:nth-child(1) { top: 0; }
-  .hamburger span:nth-child(2) { top: 10px; }
-  .hamburger span:nth-child(3) { top: 20px; }
-  .hamburger.open span:nth-child(1) { top: 10px; transform: rotate(45deg); background: #fff; }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { top: 10px; transform: rotate(-45deg); background: #fff; }
+  .nav-book:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+  /* Hamburger button (mobile only) */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 52px; height: 52px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 101;
+    background: none; border: none;
+  }
+  .nav-hamburger span {
+    display: block; width: 26px; height: 2.5px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s var(--ease);
+    transform-origin: center;
+  }
+  .nav-hamburger.active span { background: #fff; }
+  .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+  .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+  /* Mobile menu overlay */
   .mobile-menu {
-    display: none; position: fixed; inset: 0; z-index: 1050;
-    background: linear-gradient(160deg, #0D2F3F 0%, #1B6B6A 50%, #2A4F6B 100%);
-    flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 99;
+    background: linear-gradient(170deg, #0D2F3F 0%, #1B6B6A 40%, #2A4F6B 100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+    overflow: hidden;
   }
-  .mobile-menu.open { display: flex; }
+  .mobile-menu::before {
+    content: '';
+    position: absolute; bottom: -20px; left: 0; right: 0;
+    height: 120px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath d='M0,40 C240,80 480,10 720,50 C960,90 1200,20 1440,60 L1440,120 L0,120Z' fill='rgba(255,255,255,0.04)'/%3E%3Cpath d='M0,60 C360,20 720,90 1080,40 C1260,20 1380,50 1440,45 L1440,120 L0,120Z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") no-repeat bottom/100%;
+    pointer-events: none;
+  }
+  .mobile-menu.active { opacity: 1; pointer-events: auto; }
   .mobile-menu a {
-    color: #fff; text-decoration: none;
-    font-family: var(--font-heading); font-size: 1.4rem;
-    opacity: .9; transition: opacity .2s;
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
   }
-  .mobile-menu a:hover { opacity: 1; }
-  .mobile-menu .btn-book-mobile {
-    margin-top: 12px; background: var(--warm); color: #fff;
-    padding: 14px 36px; border-radius: 8px;
-    font-family: var(--sans); font-weight: 600; font-size: 1rem;
+  .mobile-menu a:hover { color: var(--seafoam); transform: translateX(6px); }
+  .mobile-menu .mm-divider {
+    width: 40px; height: 1px;
+    background: rgba(255,255,255,0.15);
   }
+  .mobile-menu .mm-book {
+    margin-top: 0.5rem;
+    padding: 16px 44px;
+    border: 1px solid var(--seafoam);
+    border-radius: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: all 0.3s;
+  }
+  .mobile-menu .mm-book:hover { background: var(--seafoam); color: var(--ocean); }
 
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: block; }
+  @media (max-width: 767px) {
+    .nav-links, .nav-book { display: none; }
+    .nav-hamburger { display: flex; margin-top: 15px; }
+    .mobile-menu { display: flex; }
+    .nav { height: 80px; }
+    .nav.scrolled { height: 64px; top: 0; }
+    .nav.scrolled .nav-hamburger { margin-top: 0; }
+    .nav-logo-img { height: 100px; }
+    .nav.scrolled .nav-logo-img { height: 50px; }
+    .top-bar { font-size: 0.7rem; gap: 1rem; padding: 7px 1rem; }
+    .top-bar .tb-divider { display: none; }
+    .top-bar svg { width: 14px; height: 14px; }
   }
 
   /* ─── HERO ─── */
   .hero {
-    margin-top: 60px;
+    margin-top: 110px;
     height: 350px;
     position: relative;
     display: flex; align-items: center; justify-content: center;
@@ -412,30 +528,47 @@
   }
 </style>
 
+<!-- TOP BAR -->
+<div class="top-bar" id="top-bar">
+  <a href="tel:+15419921887">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    (541) 992-1887
+  </a>
+  <div class="tb-divider"></div>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 10h16M10 4v16"/></svg>
+    Book Online
+  </a>
+</div>
+
 <!-- NAV -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <a href="index.html" class="nav-logo"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie" style="height:56px;"></a>
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-logo-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie">
+  </a>
   <ul class="nav-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="reviews.html">Reviews</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="visit.html" class="active">Visit</a></li>
-    <li><a href="https://www.vagaro.com/thenailladie" target="_blank" class="btn-book">Book Now</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nav-book">Book Now</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');document.body.style.overflow=document.querySelector('.mobile-menu').classList.contains('active')?'hidden':''">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu">
   <a href="services.html" onclick="closeMobileMenu()">Services</a>
   <a href="gallery.html" onclick="closeMobileMenu()">Gallery</a>
   <a href="reviews.html" onclick="closeMobileMenu()">Reviews</a>
   <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
   <a href="visit.html" onclick="closeMobileMenu()">Visit</a>
-  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="btn-book-mobile" onclick="closeMobileMenu()">Book Now</a>
+  <div class="mm-divider"></div>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="mm-book" onclick="closeMobileMenu()">Book Now</a>
+  <p style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:1rem">Depoe Bay, Oregon Coast</p>
 </div>
 
 <!-- HERO -->
@@ -613,25 +746,25 @@
 </footer>
 
 <script>
-  function toggleMobileMenu() {
-    var menu = document.getElementById('mobileMenu');
-    var btn = document.querySelector('.hamburger');
-    var isOpen = menu.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  }
-
+  // Mobile menu
   function closeMobileMenu() {
-    var menu = document.getElementById('mobileMenu');
-    var btn = document.querySelector('.hamburger');
-    menu.classList.remove('open');
-    btn.classList.remove('open');
+    document.querySelector('.nav-hamburger').classList.remove('active');
+    document.querySelector('.mobile-menu').classList.remove('active');
     document.body.style.overflow = '';
   }
 
+  // Nav scroll + top bar hide
+  const nav = document.getElementById('nav');
+  const topBar = document.getElementById('top-bar');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 80;
+    nav.classList.toggle('scrolled', scrolled);
+    if (topBar) topBar.classList.toggle('hidden', scrolled);
+  }, { passive: true });
+
   // Close mobile menu on resize to desktop
   window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) closeMobileMenu();
+    if (window.innerWidth > 767) closeMobileMenu();
   });
 
   // Smooth scroll for anchor links
