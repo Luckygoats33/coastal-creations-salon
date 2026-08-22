@@ -905,9 +905,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13,47,63,0.25) 0%,
-    rgba(27,107,106,0.1) 50%,
-    rgba(13,47,63,0.25) 100%
+    rgba(244,249,250,0.45) 0%,
+    rgba(244,249,250,0) 15%,
+    rgba(0,0,0,0) 85%,
+    rgba(11,30,36,0.45) 100%
   );
 }
 
@@ -1602,7 +1603,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- Wave: light → dark -->
 <div class="wave-divider">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
-    <path d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z" fill="#FAF9F6"/>
+    <path d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z" fill="#0B1E24"/>
   </svg>
 </div>
 
@@ -1653,7 +1654,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- Wave: dark → light alt -->
 <div class="wave-divider flip">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
-    <path d="M0,40 C480,100 960,0 1440,60 L1440,100 L0,100 Z" fill="#FAF9F6"/>
+    <path d="M0,40 C480,100 960,0 1440,60 L1440,100 L0,100 Z" fill="#0B1E24"/>
   </svg>
 </div>
 
@@ -1676,6 +1677,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="section-cta reveal from-bottom" style="margin-top:2rem"><a href="gallery.html">View Full Gallery &rarr;</a></div>
   </div>
 </section>
+
+<!-- Wave: gallery to nail-art -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
+    <path d="M0,30 C320,90 1120,10 1440,50 L1440,100 L0,100 Z" fill="#0B1E24"/>
+  </svg>
+</div>
 
 <!-- ===== NAIL ART & STAMPING SHOWCASE ===== -->
 <section class="nail-art-showcase section-pad" id="nail-art">
@@ -1721,37 +1729,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </section>
 
-<!-- ===== OUR INSTAGRAM ===== -->
-<section class="section-pad" style="background:var(--bg)">
-  <div class="section-max">
-    <p class="eyebrow reveal from-bottom">Follow Along</p>
-    <h2 class="section-heading reveal from-bottom delay-1">Our <em>Instagram</em></h2>
-    <p class="gallery-intro reveal from-bottom delay-2">Watch the latest reels from @the_nail_ladie — nail art, lash transformations, and life on the Oregon Coast.</p>
-  </div>
-  <div class="reveal from-bottom delay-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;padding:0 clamp(1rem,3vw,2rem)">
-    <iframe src="https://www.instagram.com/reel/Dawi55Ei4Ug/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DbZ5E7sic7Y/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/Da0QgnSC9ie/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DZqXt8rSAoY/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DZoFdZpiTUo/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DZYSHoSStAh/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-  </div>
-  <div class="section-max">
-    <div style="text-align:center;margin-top:2rem" class="reveal from-bottom">
-      <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .3s">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        Follow @the_nail_ladie
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Oregon Coast Video Break -->
-<div class="coast-break">
-  <video autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044253_e01609f6-16bc-4053-9c74-3f0aa9af774c.png">
-    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_050806_1e5e5fa9-77aa-4d85-b652-786301a1453c.mp4" type="video/mp4">
-  </video>
-  <div class="coast-break-overlay"></div>
+<!-- Wave: nail-art to reviews -->
+<div class="wave-divider flip">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
+    <path d="M0,50 C400,100 1000,0 1440,55 L1440,100 L0,100 Z" fill="#0B1E24"/>
+  </svg>
 </div>
 
 <!-- ===== REVIEWS ===== -->
@@ -1828,6 +1810,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <a href="https://www.vagaro.com/thenailladie" target="_blank" class="opening-cta reveal from-bottom delay-3">Book Your Appointment</a>
   </div>
 </section>
+
+<!-- Wave: opening to faq -->
+<div class="wave-divider flip">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
+    <path d="M0,35 C440,95 1040,5 1440,45 L1440,100 L0,100 Z" fill="#1A3835"/>
+  </svg>
+</div>
 
 <!-- ===== FAQ ===== -->
 <section class="faq section-pad" id="faq">
