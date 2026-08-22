@@ -930,7 +930,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .nail-art-card {
   position: relative; border-radius: 16px; overflow: hidden;
-  aspect-ratio: 1; cursor: pointer;
+  aspect-ratio: 1; cursor: pointer; display: block; text-decoration: none; color: inherit;
   transition: transform 0.4s var(--ease), box-shadow 0.4s;
 }
 .nail-art-card:hover {
@@ -1169,8 +1169,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   content: '';
   position: absolute;
   top: -1px; left: 0; right: 0;
-  height: clamp(60px, 8vw, 100px);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C180,30 360,80 540,50 C720,20 900,70 1080,40 C1260,10 1380,60 1440,45 L1440,0 L0,0 Z' fill='%230B1E24' opacity='1'/%3E%3Cpath d='M0,50 C240,80 480,20 720,55 C960,85 1200,30 1440,60 L1440,0 L0,0 Z' fill='%230E4D5A' opacity='0.6'/%3E%3C/svg%3E") no-repeat top/100% 100%;
+  height: clamp(80px, 10vw, 140px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,40 C1320,90 1080,20 840,60 C600,100 360,30 120,70 C40,85 0,65 0,65 Z' fill='%23FAF9F6'/%3E%3Cpath d='M0,0 L1440,0 L1440,30 C1200,80 960,10 720,50 C480,90 240,20 0,55 Z' fill='%23FAF9F6' opacity='0.5'/%3E%3C/svg%3E") no-repeat top/100% 100%;
 }
 .footer-wave-anim {
   position: absolute;
@@ -1705,44 +1705,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2 class="section-heading reveal from-bottom delay-1">Nail Art &amp; <em>Stamping</em></h2>
     <p class="nail-art-intro reveal from-bottom delay-2">From hand-painted ocean scenes to intricate stamping designs, every set is a custom creation. Tell us your vision — we'll bring it to life.</p>
     <div class="nail-art-grid">
-      <div class="nail-art-card reveal from-bottom delay-1" onclick="openLightbox(this)">
-        <img loading="lazy" src="img/nail-station.jpeg" alt="Nail art station with professional polish collection and Good Vibes Only sign">
-        <div class="nail-art-card-label">The Art Station</div>
-      </div>
-      <div class="nail-art-card reveal from-bottom delay-2" onclick="openLightbox(this)">
-        <img loading="lazy" src="img/lash-area.jpeg" alt="Lash and nail area with full polish display wall and NL logo">
-        <div class="nail-art-card-label">Polish Collection</div>
-      </div>
-      <div class="nail-art-card reveal from-bottom delay-3" onclick="openLightbox(this)">
-        <img loading="lazy" src="img/salon-chair.jpeg" alt="Private salon chair for one-on-one nail artistry sessions">
-        <div class="nail-art-card-label">Private Sessions</div>
-      </div>
-      <div class="nail-art-card reveal from-bottom delay-4" onclick="openLightbox(this)">
-        <img loading="lazy" src="img/pedicure-area.jpeg" alt="Dedicated pedicure area with raised platform">
-        <div class="nail-art-card-label">Pedicure Suite</div>
-      </div>
-    </div>
-    <div class="nail-art-tiers reveal from-bottom">
-      <div class="nail-art-tier">
-        <div class="nail-art-tier-name">Tier 1 — Simple</div>
-        <div class="nail-art-tier-price">$15</div>
-        <div class="nail-art-tier-desc">Foils, glitter, simple stamping</div>
-      </div>
-      <div class="nail-art-tier">
-        <div class="nail-art-tier-name">Tier 2 — Medium</div>
-        <div class="nail-art-tier-price">$25</div>
-        <div class="nail-art-tier-desc">Detailed stamping, marble, chrome effects</div>
-      </div>
-      <div class="nail-art-tier">
-        <div class="nail-art-tier-name">Tier 3 — Advanced</div>
-        <div class="nail-art-tier-price">$50</div>
-        <div class="nail-art-tier-desc">Hand-painted scenes, encapsulated designs</div>
-      </div>
-      <div class="nail-art-tier">
-        <div class="nail-art-tier-name">Tier 4 — Custom</div>
-        <div class="nail-art-tier-price">$60</div>
-        <div class="nail-art-tier-desc">Full custom art, character work, 3D elements</div>
-      </div>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-1">
+        <img loading="lazy" src="img/nail-station.jpeg" alt="Nail station with Good Vibes Only neon sign and polish rack">
+        <div class="nail-art-card-label">Nail Station</div>
+      </a>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-2">
+        <img loading="lazy" src="img/lash-area.jpeg" alt="Lash extension station with NL neon logo and polish display wall">
+        <div class="nail-art-card-label">Lash Station</div>
+      </a>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-3">
+        <img loading="lazy" src="img/salon-chair.jpeg" alt="Hair station with styling chair and ring light">
+        <div class="nail-art-card-label">Hair Station</div>
+      </a>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-4">
+        <img loading="lazy" src="img/pedicure-area.jpeg" alt="Pedicure chair on raised platform">
+        <div class="nail-art-card-label">Pedicure</div>
+      </a>
     </div>
     <div class="section-cta dark reveal from-bottom" style="margin-top:2.5rem"><a href="https://www.vagaro.com/thenailladie" target="_blank">Book Your Art Set &rarr;</a></div>
   </div>
@@ -2001,11 +1979,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </div>
 
-<!-- ===== LIGHTBOX ===== -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close">Close &times;</span>
-  <img id="lightbox-img" src="" alt="">
-</div>
 
 <!-- Back to top -->
 <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
@@ -2062,20 +2035,6 @@ if (counterEl) {
   cObs.observe(counterEl);
 }
 
-// Lightbox
-function openLightbox(card) {
-  const img = card.querySelector('img');
-  document.getElementById('lightbox-img').src = img.src;
-  document.getElementById('lightbox').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
 // Smooth anchor scrolling (manual, not CSS)
 document.querySelectorAll('a[href^="#"]').forEach(a => {
