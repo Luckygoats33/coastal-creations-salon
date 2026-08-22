@@ -397,6 +397,36 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 1px;
 }
 
+/* ABOUT PHOTOS */
+.about-photos-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+}
+.about-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+.about-photo img {
+  width: 100%; height: 240px;
+  object-fit: cover;
+}
+.about-photo-cap {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  background: #fff;
+}
+@media (max-width: 600px) {
+  .about-photos-row { grid-template-columns: 1fr; }
+  .about-photo img { height: 200px; }
+}
+
 /* CTA */
 .cta-section {
   text-align: center; padding: 60px 20px;
@@ -594,6 +624,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
   <p class="bio-intro">Heather is the owner and sole artist at The Nail Ladie in Depoe Bay, Oregon. With over 18 years of professional experience in nails, lash extensions, and hair, she brings decades of refined skill to every appointment.</p>
 
+  <div class="about-photos-row">
+    <div class="about-photo">
+      <img loading="lazy" src="img/storefront.jpeg" alt="The Nail Ladie salon storefront in Depoe Bay with NL logo on door">
+      <span class="about-photo-cap">Our Storefront — Suite K</span>
+    </div>
+    <div class="about-photo">
+      <img loading="lazy" src="img/nail-station.jpeg" alt="Nail station with Good Vibes Only neon sign">
+      <span class="about-photo-cap">The Nail Station</span>
+    </div>
+  </div>
+
   <div class="bio-text">
     <p>When you book with Heather, you're not just getting a service &mdash; you're getting her full, undivided attention. The Nail Ladie is a private, one-chair salon where you are the only client. No waiting room. No background noise from a dozen other stations. Just you, Heather, and a calm, focused experience crafted around what you want.</p>
     <p>From gel manicures and Gel-X extensions to dip powder, nail art, lash extensions, and haircuts, Heather handles everything herself with the precision and care that only comes from 18+ years behind the chair. She specializes in custom designs &mdash; chrome finishes, cat eye, intricate stamping, rhinestone art, and one-of-a-kind creations that turn nails into wearable art.</p>
@@ -624,6 +665,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <section class="section" style="padding-top:0;">
   <h2 class="section-title">What Sets The Nail Ladie Apart</h2>
   <p class="section-subtitle">More than a salon &mdash; an experience designed around you.</p>
+
+  <div class="about-photos-row" style="margin-bottom:32px;">
+    <div class="about-photo">
+      <img loading="lazy" src="img/lash-area.jpeg" alt="Lash extension suite with NL neon logo and nail polish display wall">
+      <span class="about-photo-cap">Lash & Polish Suite</span>
+    </div>
+    <div class="about-photo">
+      <img loading="lazy" src="img/pedicure-area.jpeg" alt="Pedicure area with raised platform and NL branded chair">
+      <span class="about-photo-cap">Pedicure Area</span>
+    </div>
+  </div>
 
   <div class="feature-grid">
     <div class="feature-card">
