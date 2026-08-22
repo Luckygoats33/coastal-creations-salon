@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | The Nail Ladie — Depoe Bay, Oregon Nail Salon</title>
+<meta name="description" content="Nail care tips, trends, and Oregon Coast beauty guides from The Nail Ladie in Depoe Bay. Gel nails, lash extensions, nail art, stamping, and more.">
+<link rel="canonical" href="https://luckygoats33.github.io/coastal-creations-salon/blog/">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FAF9F6;--accent:#1B6B6A;--accent-hover:#248F8D;--accent-light:#D4EEEE;--warm:#C4A06E;--seafoam:#5EC4C4;--ocean:#2A4F6B;--text:#1A1A1A;--text-mid:#555;--font-heading:Georgia,'Palatino Linotype','Book Antiqua',Palatino,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--border:#B8D4DA;--ease:cubic-bezier(.25,.46,.45,.94)}
+html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover)}
+
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:102;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;gap:clamp(1rem,3vw,2.5rem);padding:6px clamp(1rem,3vw,2rem);font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase}
+.top-bar a{color:#fff;display:flex;align-items:center;gap:6px;transition:color .3s}.top-bar a:hover{color:var(--seafoam)}
+.top-bar svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+.top-bar .tb-divider{width:1px;height:12px;background:rgba(255,255,255,.25)}
+
+.nav{position:fixed;top:30px;left:0;right:0;z-index:100;padding:0 clamp(1.5rem,4vw,3rem);height:80px;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease);background:rgba(255,255,255,.92);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.nav.scrolled{top:0;background:rgba(250,250,248,.95);height:64px;box-shadow:0 1px 0 var(--border)}
+.top-bar.hidden{transform:translateY(-100%);transition:transform .3s var(--ease)}
+.nav-logo{display:flex;align-items:center;z-index:101}.nav-logo-img{height:80px;width:auto;transition:all .5s}
+.nav.scrolled .nav-logo-img{height:50px}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-mid);transition:color .3s;position:relative;text-decoration:none}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:currentColor;transition:width .3s var(--ease)}
+.nav-links a:hover::after{width:100%}
+.nav-book{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;padding:11px 26px;border:1px solid var(--accent);color:var(--accent);transition:all .3s var(--ease);text-decoration:none}
+.nav-book:hover{background:var(--accent);color:#fff}
+
+.blog-header{margin-top:110px;padding:60px clamp(16px,5vw,80px) 30px;max-width:900px;margin-left:auto;margin-right:auto;text-align:center}
+.blog-header h1{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3rem);color:var(--ocean)}
+.blog-header h1::after{content:'';display:block;width:60px;height:3px;background:var(--warm);border-radius:3px;margin:12px auto 0}
+.blog-header p{color:var(--text-mid);font-size:1.05rem;margin-top:1rem;max-width:600px;margin-left:auto;margin-right:auto}
+
+.blog-filter{max-width:900px;margin:0 auto;padding:0 clamp(16px,5vw,80px) 20px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.blog-filter button{padding:6px 16px;border:1px solid var(--border);border-radius:20px;background:#fff;color:var(--text-mid);font-size:.78rem;cursor:pointer;transition:all .2s}
+.blog-filter button:hover,.blog-filter button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.blog-list{max-width:900px;margin:0 auto;padding:10px clamp(16px,5vw,80px) 60px;list-style:none}
+.blog-list li{border-bottom:1px solid #eee;padding:14px 0;display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+.blog-list li a{font-size:1rem;color:var(--text);font-weight:500;transition:color .2s;flex:1}
+.blog-list li a:hover{color:var(--accent)}
+.blog-cat{font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--text-mid);white-space:nowrap;background:var(--accent-light);padding:3px 10px;border-radius:12px}
+
+.site-footer{position:relative;background:linear-gradient(170deg,#0E4D5A 0%,#1B6B6A 30%,#2A7B6B 60%,#0D3F4F 100%);color:rgba(255,255,255,.85);padding:60px clamp(16px,5vw,80px) 0}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1100px;margin:0 auto}
+.footer-col h3{font-family:var(--font-heading);font-size:1rem;color:#fff;margin-bottom:1rem}
+.footer-col p,.footer-col a{color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.7;text-decoration:none;display:block}
+.footer-col a:hover{color:var(--seafoam)}
+.footer-brand-name{font-family:var(--font-heading);font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);text-align:center;padding:1rem;font-size:.75rem;color:rgba(255,255,255,.5);margin-top:40px;max-width:1100px;margin-left:auto;margin-right:auto}
+@media(max-width:767px){
+  .nav-links,.nav-book{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .blog-list li{flex-direction:column;gap:.3rem}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="top-bar" id="top-bar">
+  <a href="tel:+15419921887"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(541) 992-1887</a>
+  <div class="tb-divider"></div>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 10h16M10 4v16"/></svg>Book Online</a>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav-logo"><img class="nav-logo-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie"></a>
+  <ul class="nav-links">
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../gallery.html">Gallery</a></li>
+    <li><a href="../reviews.html">Reviews</a></li>
+    <li><a href="../faq.html">FAQ</a></li>
+    <li><a href="../visit.html">Visit</a></li>
+  </ul>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<header class="blog-header">
+  <h1>The Nail Ladie Blog</h1>
+  <p>Nail care tips, trends, and Oregon Coast beauty guides from Depoe Bay's premier private salon.</p>
+</header>
+
+<div class="blog-filter">
+  <button class="active" onclick="filterBlog('all')">All</button>
+  <button onclick="filterBlog('nails')">Nails</button>
+  <button onclick="filterBlog('lashes')">Lashes</button>
+  <button onclick="filterBlog('pedicures')">Pedicures</button>
+  <button onclick="filterBlog('location')">Local</button>
+  <button onclick="filterBlog('seasonal')">Seasonal</button>
+  <button onclick="filterBlog('educational')">Guides</button>
+  <button onclick="filterBlog('trends')">Trends</button>
+  <button onclick="filterBlog('tourism')">Tourism</button>
+  <button onclick="filterBlog('lifestyle')">Lifestyle</button>
+</div>
+
+<ul class="blog-list" id="blog-list">
+      <li><a href="gel-manicure-depoe-bay-oregon.html">Best Gel Manicure in Depoe Bay, Oregon</a><span class="blog-cat">nails</span></li>
+      <li><a href="dip-powder-nails-depoe-bay.html">Dip Powder Nails: What to Expect at The Nail Ladie</a><span class="blog-cat">nails</span></li>
+      <li><a href="gel-x-nail-extensions-depoe-bay.html">Gel-X Nail Extensions in Depoe Bay</a><span class="blog-cat">nails</span></li>
+      <li><a href="nail-stamping-art-oregon-coast.html">Nail Stamping Art: The Nail Ladie's Specialty</a><span class="blog-cat">nails</span></li>
+      <li><a href="chrome-nails-oregon-coast.html">Chrome Nails on the Oregon Coast</a><span class="blog-cat">nails</span></li>
+      <li><a href="cat-eye-nails-depoe-bay.html">Cat Eye Nails: Magnetic Nail Art in Depoe Bay</a><span class="blog-cat">nails</span></li>
+      <li><a href="structured-gel-manicure-depoe-bay.html">Structured Gel Manicure: Strength Without Extensions</a><span class="blog-cat">nails</span></li>
+      <li><a href="hard-gel-vs-gel-x-extensions.html">Hard Gel Nail Extensions vs Gel-X: Which Is Right for You?</a><span class="blog-cat">nails</span></li>
+      <li><a href="nail-fill-schedule-guide.html">Nail Fill Schedule: When to Come Back</a><span class="blog-cat">nails</span></li>
+      <li><a href="classic-pedicure-depoe-bay-oregon.html">Classic Pedicure on the Oregon Coast</a><span class="blog-cat">pedicures</span></li>
+      <li><a href="classic-lash-extensions-depoe-bay.html">Classic Lash Extensions in Depoe Bay, Oregon</a><span class="blog-cat">lashes</span></li>
+      <li><a href="volume-lash-extensions-oregon-coast.html">Volume Lash Extensions: Full, Dramatic Lashes</a><span class="blog-cat">lashes</span></li>
+      <li><a href="lash-lift-tint-depoe-bay.html">Lash Lift and Tint: Low-Maintenance Lash Enhancement</a><span class="blog-cat">lashes</span></li>
+      <li><a href="lash-extension-aftercare-guide.html">Eyelash Extension Aftercare Guide</a><span class="blog-cat">lashes</span></li>
+      <li><a href="professional-lash-removal-depoe-bay.html">Lash Removal: Safe Professional Removal at The Nail Ladie</a><span class="blog-cat">lashes</span></li>
+      <li><a href="best-nail-salon-depoe-bay-oregon.html">Best Nail Salon in Depoe Bay, Oregon</a><span class="blog-cat">location</span></li>
+      <li><a href="nail-salon-near-lincoln-city-oregon.html">Nail Salon Near Lincoln City, Oregon</a><span class="blog-cat">location</span></li>
+      <li><a href="nail-salon-near-newport-oregon.html">Nail Salon Near Newport, Oregon</a><span class="blog-cat">location</span></li>
+      <li><a href="oregon-coast-nail-salon-locals-choice.html">Oregon Coast Nail Salon: Why Locals Choose The Nail Ladie</a><span class="blog-cat">location</span></li>
+      <li><a href="nail-salon-highway-101-depoe-bay.html">Nail Salon on Highway 101 in Depoe Bay</a><span class="blog-cat">location</span></li>
+      <li><a href="central-oregon-coast-beauty-services.html">Central Oregon Coast Beauty Services</a><span class="blog-cat">location</span></li>
+      <li><a href="otter-rock-nail-salon-depoe-bay.html">Otter Rock to Depoe Bay: Quick Drive to The Nail Ladie</a><span class="blog-cat">location</span></li>
+      <li><a href="waldport-yachats-nail-salon-depoe-bay.html">Waldport and Yachats: Nail Services Worth the Drive</a><span class="blog-cat">location</span></li>
+      <li><a href="tillamook-nail-salon-depoe-bay.html">Tillamook to Depoe Bay: Nail Salon Worth the Trip</a><span class="blog-cat">location</span></li>
+      <li><a href="summer-nails-oregon-coast.html">Summer Nails on the Oregon Coast</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="holiday-nails-festive-nail-art-depoe-bay.html">Holiday Nails: Festive Nail Art in Depoe Bay</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="fall-nail-trends-oregon-coast.html">Fall Nail Trends: Cozy Season Manicures</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="spring-nail-designs-depoe-bay.html">Spring Nail Designs: Fresh Looks for the Season</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="winter-nail-care-tips-oregon-coast.html">Winter Nail Care Tips for Oregon Coast Living</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="valentines-day-nails-depoe-bay.html">Valentine's Day Nails: Romantic Nail Art Ideas</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="fourth-of-july-nails-depoe-bay.html">4th of July Nail Art: Patriotic Designs in Depoe Bay</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="halloween-nail-art-depoe-bay.html">Halloween Nail Art: Spooky Season on the Coast</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="beach-ready-nails-oregon-coast-vacation.html">Beach-Ready Nails for Your Oregon Coast Vacation</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="new-years-eve-nails-depoe-bay.html">New Year's Eve Nail Art: Ring in the New Year</a><span class="blog-cat">seasonal</span></li>
+      <li><a href="how-long-do-gel-nails-last.html">How Long Do Gel Nails Last? Complete Guide</a><span class="blog-cat">educational</span></li>
+      <li><a href="gel-vs-dip-powder-nails-comparison.html">Gel vs Dip Powder: Which Is Right for You?</a><span class="blog-cat">educational</span></li>
+      <li><a href="classic-vs-volume-lash-extensions-guide.html">Classic vs Volume Lash Extensions: A Complete Guide</a><span class="blog-cat">educational</span></li>
+      <li><a href="nail-shapes-guide-choosing-best-shape.html">Nail Shapes Guide: Find Your Perfect Shape</a><span class="blog-cat">educational</span></li>
+      <li><a href="how-to-make-manicure-last-longer.html">How to Make Your Manicure Last Longer</a><span class="blog-cat">educational</span></li>
+      <li><a href="first-time-gel-nails-what-to-expect.html">First Time Getting Gel Nails? What to Expect</a><span class="blog-cat">educational</span></li>
+      <li><a href="nail-stamping-tutorial-how-it-works.html">Nail Stamping Tutorial: How It Works</a><span class="blog-cat">educational</span></li>
+      <li><a href="cuticle-care-guide-healthy-nails.html">Cuticle Care: Why It Matters for Healthy Nails</a><span class="blog-cat">educational</span></li>
+      <li><a href="what-is-a-lash-lift-guide.html">What Is a Lash Lift? Everything You Need to Know</a><span class="blog-cat">educational</span></li>
+      <li><a href="nail-health-signs-healthy-unhealthy-nails.html">Nail Health: Signs of Healthy vs Unhealthy Nails</a><span class="blog-cat">educational</span></li>
+      <li><a href="regular-polish-vs-gel-polish-comparison.html">Regular Polish vs Gel Polish: Why Switch to Gel?</a><span class="blog-cat">comparison</span></li>
+      <li><a href="wedding-nails-oregon-coast.html">Wedding Nails on the Oregon Coast</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="self-care-day-depoe-bay-nails-lashes.html">Self-Care Day in Depoe Bay: Nails, Lashes & Coastal Vibes</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="prom-nails-ideas-oregon-coast.html">Prom Nails: Nail Art Ideas for Prom Season</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="mothers-day-gift-nail-salon-depoe-bay.html">Mother's Day Gift: Treat Mom to The Nail Ladie</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="date-night-nails-depoe-bay.html">Date Night Nails: Look Your Best for a Night Out</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="nail-art-trends-2026.html">Nail Art Trends 2026: What's Hot This Year</a><span class="blog-cat">trends</span></li>
+      <li><a href="ombre-nails-gradient-nail-art.html">Ombre Nails: Gradient Nail Art Explained</a><span class="blog-cat">trends</span></li>
+      <li><a href="french-tip-nails-modern-variations.html">French Tip Nails: Classic to Modern Variations</a><span class="blog-cat">trends</span></li>
+      <li><a href="glitter-nails-sparkle-shine-depoe-bay.html">Glitter Nails: Sparkle and Shine at The Nail Ladie</a><span class="blog-cat">trends</span></li>
+      <li><a href="matte-nails-trend-depoe-bay.html">Matte Nails: The Understated Trend</a><span class="blog-cat">trends</span></li>
+      <li><a href="nude-nails-neutrals-depoe-bay.html">Nude Nails: Why Neutrals Never Go Out of Style</a><span class="blog-cat">trends</span></li>
+      <li><a href="nail-art-short-nails-ideas.html">Nail Art for Short Nails: You Don't Need Length</a><span class="blog-cat">trends</span></li>
+      <li><a href="marble-nail-art-designs-depoe-bay.html">Marble Nail Art: Stone-Inspired Designs</a><span class="blog-cat">trends</span></li>
+      <li><a href="floral-nail-art-flowers-depoe-bay.html">Floral Nail Art: Hand-Painted and Stamped Flowers</a><span class="blog-cat">trends</span></li>
+      <li><a href="abstract-nail-art-unique-designs.html">Abstract Nail Art: Artistic and Unique Designs</a><span class="blog-cat">trends</span></li>
+      <li><a href="minimalist-nail-art-depoe-bay.html">Minimalist Nail Art: Less Is More</a><span class="blog-cat">trends</span></li>
+      <li><a href="things-to-do-depoe-bay-after-nails.html">Things to Do in Depoe Bay After Your Nail Appointment</a><span class="blog-cat">tourism</span></li>
+      <li><a href="whale-watching-spa-day-depoe-bay.html">Whale Watching and Spa Day in Depoe Bay</a><span class="blog-cat">tourism</span></li>
+      <li><a href="oregon-coast-road-trip-beauty-stop-depoe-bay.html">Oregon Coast Road Trip Beauty Stop: Depoe Bay</a><span class="blog-cat">tourism</span></li>
+      <li><a href="depoe-bay-bridge-iconic-landmark.html">Depoe Bay Bridge: Iconic Oregon Coast Landmark</a><span class="blog-cat">tourism</span></li>
+      <li><a href="boiler-bay-coastal-walk-nails-depoe-bay.html">Boiler Bay to Depoe Bay: Coastal Walk and Nails</a><span class="blog-cat">tourism</span></li>
+      <li><a href="nye-beach-newport-nails-depoe-bay.html">Nye Beach Newport and Nails in Depoe Bay</a><span class="blog-cat">tourism</span></li>
+      <li><a href="depoe-bay-restaurants-after-nails.html">Depoe Bay Restaurants: Where to Eat After Your Nails</a><span class="blog-cat">tourism</span></li>
+      <li><a href="oregon-coast-tide-pools-depoe-bay.html">Oregon Coast Tide Pools: Adventure After Your Appointment</a><span class="blog-cat">tourism</span></li>
+      <li><a href="private-salon-experience-one-on-one.html">Private Salon Experience: Why One-on-One Matters</a><span class="blog-cat">about</span></li>
+      <li><a href="haircuts-at-the-nail-ladie-depoe-bay.html">Haircuts at The Nail Ladie: Not Just Nails</a><span class="blog-cat">services</span></li>
+      <li><a href="seint-makeup-artistry-depoe-bay.html">Seint Makeup Artistry at The Nail Ladie</a><span class="blog-cat">services</span></li>
+      <li><a href="nail-extensions-full-guide-gel-x-hard-gel.html">Nail Extensions: Full Guide to Gel-X and Hard Gel</a><span class="blog-cat">educational</span></li>
+      <li><a href="pedicure-guide-which-service-right.html">Pedicure Guide: Which Pedicure Service Is Right for You?</a><span class="blog-cat">educational</span></li>
+      <li><a href="nail-art-tiers-explained-pricing.html">Nail Art Tiers Explained: Simple to Custom</a><span class="blog-cat">educational</span></li>
+      <li><a href="gel-polish-removal-professional-matters.html">Gel-Polish Removal: Why Professional Matters</a><span class="blog-cat">educational</span></li>
+      <li><a href="new-client-guide-first-visit-nail-ladie.html">New Client Guide: Your First Visit to The Nail Ladie</a><span class="blog-cat">about</span></li>
+      <li><a href="beauty-gift-guide-nail-ladie-depoe-bay.html">Gift Ideas: Beauty Gift Guide from The Nail Ladie</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="nail-salon-hygiene-safety-standards.html">Nail Salon Hygiene: How The Nail Ladie Keeps You Safe</a><span class="blog-cat">about</span></li>
+      <li><a href="nail-salon-etiquette-tips.html">Nail Salon Etiquette: Tips for a Great Experience</a><span class="blog-cat">educational</span></li>
+      <li><a href="solo-nail-technician-vs-big-salon.html">Why Choose a Solo Nail Technician Over a Big Salon</a><span class="blog-cat">about</span></li>
+      <li><a href="how-to-book-appointment-nail-ladie.html">How to Book an Appointment at The Nail Ladie</a><span class="blog-cat">about</span></li>
+      <li><a href="nail-polish-color-trends-every-season.html">Nail Polish Color Trends for Every Season</a><span class="blog-cat">trends</span></li>
+      <li><a href="nail-shapes-for-different-hand-types.html">Nail Shapes for Different Hand Types</a><span class="blog-cat">educational</span></li>
+      <li><a href="oregon-coast-weather-nail-care.html">Oregon Coast Weather and Your Nails: What to Know</a><span class="blog-cat">educational</span></li>
+      <li><a href="five-star-reviews-nail-ladie-depoe-bay.html">5 Star Reviews: What Clients Say About The Nail Ladie</a><span class="blog-cat">about</span></li>
+      <li><a href="why-depoe-bay-perfect-nail-salon-location.html">Why Depoe Bay Is the Perfect Location for a Nail Salon</a><span class="blog-cat">about</span></li>
+      <li><a href="nail-care-active-oregon-coast-women.html">Nail Care for Active Oregon Coast Women</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="instagram-worthy-nails-nail-ladie.html">Instagram-Worthy Nails at The Nail Ladie</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="nail-salon-vs-diy-professional-worth-it.html">Nail Salon vs DIY: Why Professional Nails Are Worth It</a><span class="blog-cat">comparison</span></li>
+      <li><a href="oregon-coast-gift-experience-beauty.html">Oregon Coast Gift Experience: Nails, Lashes, and the Coast</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="nail-extensions-bitten-nails-transformation.html">Nail Extensions for Bitten Nails: Transform Your Hands</a><span class="blog-cat">educational</span></li>
+      <li><a href="combination-appointments-nails-lashes-pedicure.html">Combination Appointments: Nails + Lashes + More</a><span class="blog-cat">services</span></li>
+      <li><a href="lower-lash-extensions-depoe-bay.html">Lower Lash Extensions: Complete Your Lash Look</a><span class="blog-cat">lashes</span></li>
+      <li><a href="mini-lash-fill-quick-refresh-depoe-bay.html">Mini Lash Fill: Quick Lash Refresh</a><span class="blog-cat">lashes</span></li>
+      <li><a href="specialty-nail-shapes-coffin-almond-stiletto.html">Specialty Nail Shapes: Coffin, Almond, and Stiletto</a><span class="blog-cat">trends</span></li>
+      <li><a href="color-lash-extensions-depoe-bay.html">Color Lash Extensions: Add a Pop of Color</a><span class="blog-cat">lashes</span></li>
+      <li><a href="custom-lash-styling-signature-look.html">Custom Lash Styling: Find Your Signature Look</a><span class="blog-cat">lashes</span></li>
+      <li><a href="new-technician-fill-switching-salons.html">New Technician Fill Add-On: Switching to The Nail Ladie</a><span class="blog-cat">services</span></li>
+      <li><a href="nail-repair-broken-damaged-nails.html">Nail Repair: Quick Fixes for Broken or Damaged Nails</a><span class="blog-cat">services</span></li>
+      <li><a href="french-ombre-baby-boomer-nails.html">French Ombre (Baby Boomer) Nails Guide</a><span class="blog-cat">trends</span></li>
+      <li><a href="consultation-services-nail-ladie-depoe-bay.html">Consultation Services at The Nail Ladie</a><span class="blog-cat">services</span></li>
+      <li><a href="depoe-bay-nail-salon-tourists-visitors.html">Depoe Bay Nail Salon for Tourists and Visitors</a><span class="blog-cat">tourism</span></li>
+      <li><a href="acrylic-vs-gel-nails-difference.html">Acrylic vs Gel Nails: Understanding the Difference</a><span class="blog-cat">educational</span></li>
+      <li><a href="how-to-choose-nail-salon-red-green-flags.html">How to Choose a Nail Salon: Red Flags and Green Flags</a><span class="blog-cat">educational</span></li>
+      <li><a href="nail-salon-gift-certificate-ideas.html">Nail Salon Gift Certificate Ideas</a><span class="blog-cat">lifestyle</span></li>
+      <li><a href="nail-care-during-pregnancy-safety.html">Nail Care During Pregnancy: What's Safe</a><span class="blog-cat">educational</span></li>
+      <li><a href="nail-trends-through-decades-history.html">Nail Trends Through the Decades: A Style History</a><span class="blog-cat">trends</span></li>
+      <li><a href="storm-watching-nails-winter-oregon-coast.html">Storm Watching and Nails: Winter on the Oregon Coast</a><span class="blog-cat">tourism</span></li>
+      <li><a href="lash-lift-vs-lash-extensions-comparison.html">Lash Lift vs Lash Extensions: Which Is Right for You?</a><span class="blog-cat">comparison</span></li>
+      <li><a href="coastal-inspired-nail-art-oregon-coast-designs.html">Coastal-Inspired Nail Art: Oregon Coast Designs</a><span class="blog-cat">trends</span></li>
+
+</ul>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col"><div class="footer-brand-name">The Nail Ladie</div><p>Premium nail care on the Oregon Coast.</p></div>
+    <div class="footer-col"><h3>Explore</h3><a href="../services.html">Services</a><a href="../gallery.html">Gallery</a><a href="../reviews.html">Reviews</a></div>
+    <div class="footer-col"><h3>Visit</h3><p>531 US-101 Suites K1-2, Depoe Bay, OR 97341</p><a href="tel:+15419921887">(541) 992-1887</a></div>
+    <div class="footer-col"><h3>Book</h3><a href="https://www.vagaro.com/thenailladie" target="_blank">Book Online</a><a href="tel:+15419921887">Call to Book</a></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 The Nail Ladie. All rights reserved. Depoe Bay, Oregon.</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav'),topBar=document.getElementById('top-bar');
+window.addEventListener('scroll',()=>{const s=window.scrollY>80;nav.classList.toggle('scrolled',s);if(topBar)topBar.classList.toggle('hidden',s)},{passive:true});
+function filterBlog(cat){
+  document.querySelectorAll('.blog-filter button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('#blog-list li').forEach(li=>{
+    const c=li.querySelector('.blog-cat').textContent.toLowerCase();
+    li.style.display=(cat==='all'||c===cat)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
