@@ -18,7 +18,9 @@
 <meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033616_839dfb88-bfba-4425-9785-898d826be2b7.png">
 <meta name="geo.region" content="US-OR">
 <meta name="geo.placename" content="Depoe Bay">
+<meta name="theme-color" content="#0B1E24">
 <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossorigin>
+<link rel="preload" as="image" href="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033616_839dfb88-bfba-4425-9785-898d826be2b7.png" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -111,6 +113,18 @@
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+.skip-link {
+  position: absolute; top: -100%; left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  background: var(--accent); color: #fff;
+  padding: 12px 24px; font-size: 0.85rem;
+  letter-spacing: 1px; text-decoration: none;
+  border-radius: 0 0 6px 6px;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
 
 :root {
   --bg: #F4F9FA;
@@ -1503,6 +1517,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to content</a>
+
 <!-- ===== TOP HEADER BAR ===== -->
 <div class="top-bar" id="top-bar">
   <a href="tel:+15419921887">
@@ -1529,7 +1545,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <li><a href="#visit">Visit</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nav-book">Book Now</a>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" class="nav-book">Book Now</a>
   <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');document.body.style.overflow=document.querySelector('.mobile-menu').classList.contains('active')?'hidden':''">
     <span></span><span></span><span></span>
   </button>
@@ -1537,7 +1553,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 <!-- Mobile menu overlay -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#about" onclick="closeMobileMenu()">About</a>
   <a href="#services" onclick="closeMobileMenu()">Services</a>
   <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
   <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
@@ -1548,6 +1563,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <a href="https://www.vagaro.com/thenailladie" target="_blank" class="mm-book" onclick="closeMobileMenu()">Book Now</a>
   <p style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:1rem">Depoe Bay, Oregon Coast</p>
 </div>
+
+<main id="main-content">
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -1561,7 +1578,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <p class="hero-eyebrow">Depoe Bay, Oregon</p>
     <h1 class="hero-title">The Nail<br><em>Ladie</em></h1>
     <p class="hero-sub">Nails &middot; Lashes &middot; Beauty &mdash; Oregon Coast</p>
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" class="hero-cta">Book Your Appointment</a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" class="hero-cta">Book Your Appointment</a>
   </div>
   <div class="hero-scroll">
     <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -1573,7 +1590,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="section-max">
     <div class="about-grid">
       <div class="about-image reveal from-left">
-        <img loading="lazy" src="img/nail-station.webp" alt="The Nail Ladie nail station with Good Vibes Only neon sign and polish rack">
+        <img loading="lazy" src="img/nail-station.webp" alt="The Nail Ladie nail station with Good Vibes Only neon sign and polish rack" width="640" height="400">
       </div>
       <div class="about-text">
         <p class="eyebrow reveal from-bottom">About</p>
@@ -1610,7 +1627,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- ===== SERVICES ===== -->
 <section class="services section-pad" id="services">
   <div class="services-bg">
-    <img loading="lazy" src="img/nail-station.webp" alt="The Nail Ladie nail station with Good Vibes Only neon sign">
+    <img loading="lazy" src="img/nail-station.webp" alt="The Nail Ladie nail station with Good Vibes Only neon sign" width="640" height="400">
   </div>
   <div class="section-max">
     <p class="eyebrow reveal from-bottom">Services</p>
@@ -1666,12 +1683,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <p class="gallery-intro reveal from-bottom delay-2">Every set is a one-of-a-kind creation. Swipe to explore recent work from our Depoe Bay studio.</p>
   </div>
   <div class="reveal from-bottom delay-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto;padding:0 clamp(1rem,3vw,2rem)">
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-nail-art.webp" alt="Ocean-themed gel nail art with teal and seafoam wave designs" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-gel-manicure.webp" alt="Classic nude pink gel manicure with glossy finish" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-stamping.webp" alt="Intricate gold and black nail stamping design" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-lash-extensions.webp" alt="Volume eyelash extensions with wispy natural look" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-balayage.webp" alt="Caramel and honey blonde balayage with beachy waves" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
-    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-pedicure.webp" alt="Luxury pedicure with teal nail polish" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Book nail art — ocean-themed gel design" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-nail-art.webp" alt="Ocean-themed gel nail art with teal and seafoam wave designs" width="520" height="390" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Book gel manicure — classic nude pink" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-gel-manicure.webp" alt="Classic nude pink gel manicure with glossy finish" width="520" height="390" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Book nail stamping — gold and black design" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-stamping.webp" alt="Intricate gold and black nail stamping design" width="520" height="390" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Book lash extensions — volume set" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-lash-extensions.webp" alt="Volume eyelash extensions with wispy natural look" width="520" height="390" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Book hair coloring — balayage" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-balayage.webp" alt="Caramel and honey blonde balayage with beachy waves" width="520" height="390" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Book pedicure — luxury teal polish" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/portfolio-pedicure.webp" alt="Luxury pedicure with teal nail polish" width="520" height="390" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
   </div>
   <div class="section-max">
     <div class="section-cta reveal from-bottom" style="margin-top:2rem"><a href="gallery.html">View Full Gallery &rarr;</a></div>
@@ -1693,7 +1710,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <p class="nail-art-intro reveal from-bottom delay-2">From hand-painted ocean scenes to intricate stamping designs, every set is a custom creation. Tell us your vision — we'll bring it to life.</p>
     <div class="station-features">
       <div class="station-row reveal from-bottom delay-1">
-        <div class="station-img"><img loading="lazy" src="img/nail-station.webp" alt="Nail station with Good Vibes Only neon sign and polish rack"></div>
+        <div class="station-img"><img loading="lazy" src="img/nail-station.webp" alt="Nail station with Good Vibes Only neon sign and polish rack" width="500" height="375"></div>
         <div class="station-info">
           <h3>Nail Station</h3>
           <p>Gel manicures, nail extensions, custom art, and stamping designs. Over 200 colors and endless possibilities.</p>
@@ -1701,7 +1718,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
       </div>
       <div class="station-row reverse reveal from-bottom delay-2">
-        <div class="station-img"><img loading="lazy" src="img/lash-area.webp" alt="Lash extension station with NL neon logo and polish display wall"></div>
+        <div class="station-img"><img loading="lazy" src="img/lash-area.webp" alt="Lash extension station with NL neon logo and polish display wall" width="500" height="375"></div>
         <div class="station-info">
           <h3>Lash Station</h3>
           <p>Classic, volume, and hybrid lash extensions. Lash lifts and tints for a natural, low-maintenance look.</p>
@@ -1709,7 +1726,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
       </div>
       <div class="station-row reveal from-bottom delay-3">
-        <div class="station-img"><img loading="lazy" src="img/salon-chair.webp" alt="Hair styling station with chair and ring light"></div>
+        <div class="station-img"><img loading="lazy" src="img/salon-chair.webp" alt="Hair styling station with chair and ring light" width="500" height="375"></div>
         <div class="station-info">
           <h3>Hair Station</h3>
           <p>Cuts, color, and styling in a private one-on-one setting. Your time, your space, your look.</p>
@@ -1717,7 +1734,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
       </div>
       <div class="station-row reverse reveal from-bottom delay-4">
-        <div class="station-img"><img loading="lazy" src="img/pedicure-area.webp" alt="Pedicure chair on raised platform"></div>
+        <div class="station-img"><img loading="lazy" src="img/pedicure-area.webp" alt="Pedicure chair on raised platform" width="500" height="375"></div>
         <div class="station-info">
           <h3>Pedicure</h3>
           <p>Classic and gel pedicures with a coastal view. Relax, refresh, and walk out feeling brand new.</p>
@@ -1774,13 +1791,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <p class="instagram-intro reveal from-bottom delay-2">See the latest nail art, lash transformations, and behind-the-scenes from our Depoe Bay studio.</p>
     <div class="instagram-grid reveal from-bottom delay-3">
       <div class="instagram-embed-card">
-        <iframe src="https://www.instagram.com/reel/Dawi55Ei4Ug/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/Dawi55Ei4Ug/embed/" title="Instagram Reel — nail art showcase" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
       </div>
       <div class="instagram-embed-card">
-        <iframe src="https://www.instagram.com/reel/DbZ5E7sic7Y/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/DbZ5E7sic7Y/embed/" title="Instagram Reel — lash transformation" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
       </div>
       <div class="instagram-embed-card">
-        <iframe src="https://www.instagram.com/reel/DbYL2peCiCw/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+        <iframe src="https://www.instagram.com/reel/DbYL2peCiCw/embed/" title="Instagram Reel — behind the scenes" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
       </div>
     </div>
     <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" class="instagram-follow-cta reveal from-bottom delay-4">
@@ -1801,7 +1818,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- ===== NOW OPEN ===== -->
 <section class="opening">
   <div class="opening-bg">
-    <img loading="lazy" src="img/storefront.webp" alt="The Nail Ladie storefront in Depoe Bay, Oregon">
+    <img loading="lazy" src="img/storefront.webp" alt="The Nail Ladie storefront in Depoe Bay, Oregon" width="640" height="400">
   </div>
   <div class="opening-content">
     <p class="eyebrow reveal from-bottom">We're Here</p>
@@ -1895,12 +1912,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
       </div>
       <div class="location-map reveal from-right delay-3">
-        <iframe src="https://maps.google.com/maps?q=531+US-101,+Suites+K1-2,+Depoe+Bay,+OR+97341&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://maps.google.com/maps?q=531+US-101,+Suites+K1-2,+Depoe+Bay,+OR+97341&t=&z=14&ie=UTF8&iwloc=&output=embed" title="Google Maps — The Nail Ladie, 531 US-101, Depoe Bay, OR" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
     <div class="section-cta dark reveal from-bottom"><a href="visit.html">Get Directions &amp; Details &rarr;</a></div>
   </div>
 </section>
+
+</main>
 
 <!-- ===== OCEAN WAVE TRANSITION ===== -->
 <div class="ocean-wave-transition">
@@ -2055,34 +2074,6 @@ window.addEventListener('scroll', () => {
   btt.classList.toggle('visible', window.scrollY > 600);
 }, { passive: true });
 
-
-// Gallery dots
-const track = document.querySelector('.gallery-track');
-const cards = document.querySelectorAll('.gallery-card');
-const dotsContainer = document.getElementById('gallery-dots');
-if (track && cards.length && dotsContainer) {
-  cards.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-    dot.onclick = () => {
-      cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    };
-    dotsContainer.appendChild(dot);
-  });
-  const dots = dotsContainer.querySelectorAll('.gallery-dot');
-  track.addEventListener('scroll', () => {
-    const scrollLeft = track.scrollLeft;
-    const cardWidth = cards[0].offsetWidth + 16;
-    const idx = Math.round(scrollLeft / cardWidth);
-    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-  }, { passive: true });
-}
-
-// Gallery swipe hint on mobile
-if (window.innerWidth <= 767 && track) {
-  setTimeout(() => { track.classList.add('hint-active'); }, 1500);
-  track.addEventListener('animationend', () => { track.classList.remove('hint-active'); });
-}
 
 // Mobile CTA pulse on first appearance
 const mCta = document.querySelector('.mobile-cta');
