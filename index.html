@@ -415,6 +415,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-eyebrow {
   font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
   color: var(--warm); margin-bottom: 1.5rem;
+  background: rgba(11, 30, 36, 0.55);
+  padding: 0.4em 1em;
+  border-radius: 4px;
+  display: inline-block;
   opacity: 0; transform: translateY(20px);
   animation: fadeUp 0.8s var(--ease-out) 0.4s forwards;
 }
@@ -1165,12 +1169,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   overflow: hidden;
 }
-.footer::before {
-  content: '';
-  position: absolute;
-  top: -1px; left: 0; right: 0;
-  height: clamp(80px, 10vw, 140px);
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,40 C1320,90 1080,20 840,60 C600,100 360,30 120,70 C40,85 0,65 0,65 Z' fill='%23FAF9F6'/%3E%3Cpath d='M0,0 L1440,0 L1440,30 C1200,80 960,10 720,50 C480,90 240,20 0,55 Z' fill='%23FAF9F6' opacity='0.5'/%3E%3C/svg%3E") no-repeat top/100% 100%;
+.ocean-wave-transition {
+  background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 50%, #2A7B6B 100%);
+  line-height: 0;
+}
+.ocean-wave-transition svg {
+  display: block;
+  width: 100%;
+  height: clamp(80px, 10vw, 130px);
 }
 .footer-wave-anim {
   position: absolute;
@@ -1617,7 +1623,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- Wave: light → dark -->
 <div class="wave-divider">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
-    <path d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z" fill="#0B1E24"/>
+    <path d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z" fill="#FAF9F6"/>
   </svg>
 </div>
 
@@ -1668,7 +1674,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <!-- Wave: dark → light alt -->
 <div class="wave-divider flip">
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
-    <path d="M0,40 C480,100 960,0 1440,60 L1440,100 L0,100 Z" fill="#0B1E24"/>
+    <path d="M0,40 C480,100 960,0 1440,60 L1440,100 L0,100 Z" fill="#FAF9F6"/>
   </svg>
 </div>
 
@@ -1916,6 +1922,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="section-cta dark reveal from-bottom"><a href="visit.html">Get Directions &amp; Details &rarr;</a></div>
   </div>
 </section>
+
+<!-- ===== OCEAN WAVE TRANSITION ===== -->
+<div class="ocean-wave-transition">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L1440,0 L1440,55 C1380,72 1300,38 1200,56 C1100,74 1000,34 880,52 C760,70 660,28 540,48 C420,68 320,30 200,50 C100,65 40,38 0,45 Z" fill="#0B1E24" opacity="0.6"/>
+    <path d="M0,0 L1440,0 L1440,40 C1360,68 1260,22 1120,48 C980,74 860,28 720,50 C580,72 460,26 320,48 C200,66 80,30 0,50 Z" fill="#0B1E24"/>
+  </svg>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">

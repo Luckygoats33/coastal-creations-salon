@@ -342,6 +342,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cta-btn.secondary { border: 2px solid var(--accent); color: var(--accent); }
 .cta-btn.secondary:hover { background: var(--accent); color: #fff; }
 
+.ocean-wave-transition {
+  background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 50%, #2A7B6B 100%);
+  line-height: 0;
+}
+.ocean-wave-transition svg {
+  display: block;
+  width: 100%;
+  height: clamp(80px, 10vw, 130px);
+}
 .faq-footer {
   background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 30%, #2A7B6B 60%, #0D3F4F 100%);
   position: relative; overflow: hidden;
@@ -675,6 +684,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <a href="tel:+15419921887" class="cta-btn secondary">Call (541) 992-1887</a>
     </div>
   </div>
+</div>
+
+<!-- OCEAN WAVE TRANSITION -->
+<div class="ocean-wave-transition">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L1440,0 L1440,55 C1380,72 1300,38 1200,56 C1100,74 1000,34 880,52 C760,70 660,28 540,48 C420,68 320,30 200,50 C100,65 40,38 0,45 Z" fill="#0B1E24" opacity="0.6"/>
+    <path d="M0,0 L1440,0 L1440,40 C1360,68 1260,22 1120,48 C980,74 860,28 720,50 C580,72 460,26 320,48 C200,66 80,30 0,50 Z" fill="#0B1E24"/>
+  </svg>
 </div>
 
 <footer class="faq-footer">

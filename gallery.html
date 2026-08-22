@@ -410,15 +410,14 @@ body {
   color: rgba(255,255,255,.85);
   padding-top: 0;
 }
-.footer-wave {
-  width: 100%;
+.ocean-wave-transition {
+  background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 50%, #2A7B6B 100%);
   line-height: 0;
-  margin-bottom: 0;
 }
-.footer-wave svg {
-  width: 100%;
-  height: auto;
+.ocean-wave-transition svg {
   display: block;
+  width: 100%;
+  height: clamp(80px, 10vw, 130px);
 }
 .footer-grid {
   display: grid;
@@ -708,13 +707,16 @@ body {
   <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener">Book Now</a>
 </div>
 
+<!-- OCEAN WAVE TRANSITION -->
+<div class="ocean-wave-transition">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L1440,0 L1440,55 C1380,72 1300,38 1200,56 C1100,74 1000,34 880,52 C760,70 660,28 540,48 C420,68 320,30 200,50 C100,65 40,38 0,45 Z" fill="#0B1E24" opacity="0.6"/>
+    <path d="M0,0 L1440,0 L1440,40 C1360,68 1260,22 1120,48 C980,74 860,28 720,50 C580,72 460,26 320,48 C200,66 80,30 0,50 Z" fill="#0B1E24"/>
+  </svg>
+</div>
+
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-wave">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path class="wave-animated" d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,0 L0,0 Z" fill="#F4F9FA"/>
-    </svg>
-  </div>
   <div class="footer-grid">
     <div class="footer-col">
       <p class="brand-tagline">The Nail Ladie</p>
