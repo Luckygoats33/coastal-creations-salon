@@ -925,6 +925,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     rgba(11,30,36,0.45) 100%
   );
 }
+.coast-wave-top,
+.coast-wave-bottom {
+  position: absolute;
+  left: 0; right: 0;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: clamp(30px, 5vw, 60px);
+  pointer-events: none;
+}
+.coast-wave-top { top: 0; }
+.coast-wave-bottom { bottom: 0; }
 
 /* ========================================
    NAIL ART SHOWCASE
@@ -1585,6 +1597,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </section>
 
+<!-- Wave: hero to about -->
+<div class="wave-divider flip" style="margin-top:-2px">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;height:clamp(50px,8vw,100px)">
+    <path d="M0,50 C360,100 1080,10 1440,60 L1440,100 L0,100 Z" fill="#0B1E24"/>
+  </svg>
+</div>
+
 <!-- ===== ABOUT ===== -->
 <section class="about section-pad" id="about">
   <div class="section-max">
@@ -1783,6 +1802,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </section>
 
+<!-- Wave: reviews to instagram -->
+<div class="wave-divider" style="background:linear-gradient(180deg,#E3EEF0 0%,#F4F9FA 100%)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;height:clamp(30px,5vw,60px)">
+    <path d="M0,20 C480,55 960,5 1440,35 L1440,60 L0,60 Z" fill="#F4F9FA"/>
+  </svg>
+</div>
+
 <!-- ===== INSTAGRAM FEED ===== -->
 <section class="instagram-feed section-pad" id="instagram">
   <div class="section-max">
@@ -1812,6 +1838,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <video autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_044302_c72c8dd2-9069-4048-9e62-5c11afcd1e81.png">
     <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_050811_6a2fe1d2-ad29-4cdf-9610-a62be6a9a760.mp4" type="video/mp4">
   </video>
+  <svg class="coast-wave-top" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 L1440,0 L1440,25 C1200,55 720,5 0,35 Z" fill="#F4F9FA"/>
+  </svg>
+  <svg class="coast-wave-bottom" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,30 C400,60 1000,5 1440,25 L1440,60 L0,60 Z" fill="#1A3835"/>
+  </svg>
   <div class="coast-break-overlay"></div>
 </div>
 
