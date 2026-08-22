@@ -927,62 +927,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin: 0 auto 2.5rem; line-height: 1.7; font-size: 1.05rem;
 }
 
-.nail-art-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem; margin-bottom: 2.5rem;
+.station-features {
+  max-width: 1000px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 3rem;
 }
-
-.nail-art-card {
-  position: relative; border-radius: 16px; overflow: hidden;
-  aspect-ratio: 1; cursor: pointer; display: block; text-decoration: none; color: inherit;
-  transition: transform 0.4s var(--ease), box-shadow 0.4s;
+.station-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2.5rem; align-items: center;
 }
-.nail-art-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 50px rgba(0,0,0,0.4);
+.station-row.reverse { direction: rtl; }
+.station-row.reverse > * { direction: ltr; }
+.station-img {
+  border-radius: 16px; overflow: hidden;
+  aspect-ratio: 4/3;
 }
-.nail-art-card img {
+.station-img img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.6s var(--ease);
 }
-.nail-art-card:hover img { transform: scale(1.08); }
-.nail-art-card-label {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 2rem 1rem 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  color: #fff; font-family: var(--font-heading);
-  font-weight: 600; font-size: 0.9rem;
+.station-row:hover .station-img img { transform: scale(1.05); }
+.station-info h3 {
+  font-family: var(--font-heading); font-size: 1.4rem;
+  color: #fff; margin-bottom: 0.6rem;
 }
-
-.nail-art-tiers {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1rem; margin-top: 2rem;
+.station-info p {
+  color: rgba(255,255,255,0.7); font-size: 0.95rem;
+  line-height: 1.7; margin-bottom: 1rem;
 }
-.nail-art-tier {
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px; padding: 1.5rem 1rem;
-  transition: border-color 0.3s, background 0.3s;
+.station-info a {
+  color: var(--warm); text-decoration: none;
+  font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+  transition: color 0.3s;
 }
-.nail-art-tier:hover {
-  border-color: var(--warm); background: rgba(255,255,255,0.1);
-}
-.nail-art-tier-name {
-  font-family: var(--font-heading); font-weight: 600;
-  color: #fff; font-size: 1rem; margin-bottom: 0.3rem;
-}
-.nail-art-tier-price {
-  color: var(--warm); font-size: 1.1rem; font-weight: 700;
-}
-.nail-art-tier-desc {
-  color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 0.5rem;
-}
-
+.station-info a:hover { color: var(--seafoam); }
 @media (max-width: 768px) {
-  .nail-art-grid { grid-template-columns: 1fr 1fr; }
-  .nail-art-tiers { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 480px) {
-  .nail-art-tiers { grid-template-columns: 1fr; }
+  .station-row, .station-row.reverse { grid-template-columns: 1fr; direction: ltr; gap: 1.2rem; }
 }
 
 /* ========================================
@@ -1685,22 +1664,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2 class="section-heading reveal from-bottom delay-1">Our <em>Portfolio</em></h2>
     <p class="gallery-intro reveal from-bottom delay-2">Every set is a one-of-a-kind creation. Swipe to explore recent work from our Depoe Bay studio.</p>
   </div>
-  <div class="ig-portfolio reveal from-bottom delay-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;padding:0 clamp(1rem,3vw,2rem)">
-    <iframe src="https://www.instagram.com/reel/Dawi55Ei4Ug/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DbZ5E7sic7Y/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/Da0QgnSC9ie/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DZqXt8rSAoY/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DZoFdZpiTUo/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-    <iframe src="https://www.instagram.com/reel/DZYSHoSStAh/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+  <div class="reveal from-bottom delay-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto;padding:0 clamp(1rem,3vw,2rem)">
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/nail-station.jpeg" alt="Nail station with polish rack and Good Vibes neon sign" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/lash-area.jpeg" alt="Lash extension station with NL neon logo" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/salon-chair.jpeg" alt="Hair styling station with chair and ring light" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/pedicure-area.jpeg" alt="Pedicure chair on raised platform" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" style="display:block;border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .3s;aspect-ratio:4/3"><img src="img/storefront.jpeg" alt="The Nail Ladie storefront in Depoe Bay" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>
   </div>
   <div class="section-max">
-    <div class="gallery-nav reveal from-bottom delay-4" style="justify-content:center;margin-top:2rem">
-      <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .3s">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        Follow @the_nail_ladie
-      </a>
-    </div>
-    <div class="section-cta reveal from-bottom"><a href="gallery.html">View Full Gallery &rarr;</a></div>
+    <div class="section-cta reveal from-bottom" style="margin-top:2rem"><a href="gallery.html">View Full Gallery &rarr;</a></div>
   </div>
 </section>
 
@@ -1710,25 +1682,66 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <p class="eyebrow reveal from-bottom">Signature Art</p>
     <h2 class="section-heading reveal from-bottom delay-1">Nail Art &amp; <em>Stamping</em></h2>
     <p class="nail-art-intro reveal from-bottom delay-2">From hand-painted ocean scenes to intricate stamping designs, every set is a custom creation. Tell us your vision — we'll bring it to life.</p>
-    <div class="nail-art-grid">
-      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-1">
-        <img loading="lazy" src="img/nail-station.jpeg" alt="Nail station with Good Vibes Only neon sign and polish rack">
-        <div class="nail-art-card-label">Nail Station</div>
-      </a>
-      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-2">
-        <img loading="lazy" src="img/lash-area.jpeg" alt="Lash extension station with NL neon logo and polish display wall">
-        <div class="nail-art-card-label">Lash Station</div>
-      </a>
-      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-3">
-        <img loading="lazy" src="img/salon-chair.jpeg" alt="Hair station with styling chair and ring light">
-        <div class="nail-art-card-label">Hair Station</div>
-      </a>
-      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nail-art-card reveal from-bottom delay-4">
-        <img loading="lazy" src="img/pedicure-area.jpeg" alt="Pedicure chair on raised platform">
-        <div class="nail-art-card-label">Pedicure</div>
-      </a>
+    <div class="station-features">
+      <div class="station-row reveal from-bottom delay-1">
+        <div class="station-img"><img loading="lazy" src="img/nail-station.jpeg" alt="Nail station with Good Vibes Only neon sign and polish rack"></div>
+        <div class="station-info">
+          <h3>Nail Station</h3>
+          <p>Gel manicures, nail extensions, custom art, and stamping designs. Over 200 colors and endless possibilities.</p>
+          <a href="https://www.vagaro.com/thenailladie" target="_blank">Book Nails &rarr;</a>
+        </div>
+      </div>
+      <div class="station-row reverse reveal from-bottom delay-2">
+        <div class="station-img"><img loading="lazy" src="img/lash-area.jpeg" alt="Lash extension station with NL neon logo and polish display wall"></div>
+        <div class="station-info">
+          <h3>Lash Station</h3>
+          <p>Classic, volume, and hybrid lash extensions. Lash lifts and tints for a natural, low-maintenance look.</p>
+          <a href="https://www.vagaro.com/thenailladie" target="_blank">Book Lashes &rarr;</a>
+        </div>
+      </div>
+      <div class="station-row reveal from-bottom delay-3">
+        <div class="station-img"><img loading="lazy" src="img/salon-chair.jpeg" alt="Hair styling station with chair and ring light"></div>
+        <div class="station-info">
+          <h3>Hair Station</h3>
+          <p>Cuts, color, and styling in a private one-on-one setting. Your time, your space, your look.</p>
+          <a href="https://www.vagaro.com/thenailladie" target="_blank">Book Hair &rarr;</a>
+        </div>
+      </div>
+      <div class="station-row reverse reveal from-bottom delay-4">
+        <div class="station-img"><img loading="lazy" src="img/pedicure-area.jpeg" alt="Pedicure chair on raised platform"></div>
+        <div class="station-info">
+          <h3>Pedicure</h3>
+          <p>Classic and gel pedicures with a coastal view. Relax, refresh, and walk out feeling brand new.</p>
+          <a href="https://www.vagaro.com/thenailladie" target="_blank">Book Pedicure &rarr;</a>
+        </div>
+      </div>
     </div>
     <div class="section-cta dark reveal from-bottom" style="margin-top:2.5rem"><a href="https://www.vagaro.com/thenailladie" target="_blank">Book Your Art Set &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ===== OUR INSTAGRAM ===== -->
+<section class="section-pad" style="background:var(--bg)">
+  <div class="section-max">
+    <p class="eyebrow reveal from-bottom">Follow Along</p>
+    <h2 class="section-heading reveal from-bottom delay-1">Our <em>Instagram</em></h2>
+    <p class="gallery-intro reveal from-bottom delay-2">Watch the latest reels from @the_nail_ladie — nail art, lash transformations, and life on the Oregon Coast.</p>
+  </div>
+  <div class="reveal from-bottom delay-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;padding:0 clamp(1rem,3vw,2rem)">
+    <iframe src="https://www.instagram.com/reel/Dawi55Ei4Ug/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+    <iframe src="https://www.instagram.com/reel/DbZ5E7sic7Y/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+    <iframe src="https://www.instagram.com/reel/Da0QgnSC9ie/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+    <iframe src="https://www.instagram.com/reel/DZqXt8rSAoY/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+    <iframe src="https://www.instagram.com/reel/DZoFdZpiTUo/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+    <iframe src="https://www.instagram.com/reel/DZYSHoSStAh/embed/" style="border:0;border-radius:12px;width:100%;min-height:480px" loading="lazy" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+  </div>
+  <div class="section-max">
+    <div style="text-align:center;margin-top:2rem" class="reveal from-bottom">
+      <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid var(--accent);color:var(--accent);font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .3s">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        Follow @the_nail_ladie
+      </a>
+    </div>
   </div>
 </section>
 
