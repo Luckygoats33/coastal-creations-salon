@@ -117,6 +117,7 @@
       font-family: var(--sans);
       color: var(--text);
       background: var(--bg);
+      padding-bottom: 76px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -672,6 +673,24 @@
     .review-card:hover.visible {
       transform: translateY(-4px);
     }
+
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      background: var(--dark, #0B1E24); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+    .sticky-cta-inner { display: flex; gap: 10px; align-items: center; }
+    .scta-btn {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 14px; font-size: 0.65rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #fff; min-height: 48px; transition: background 0.3s; text-decoration: none;
+    }
+    .scta-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .scta-btn.primary { flex: 1; background: var(--accent, #1B6B6A); }
+    .scta-btn.primary:hover { background: var(--accent-hover, #248F8D); }
+    .scta-btn.secondary { width: 48px; background: rgba(255,255,255,0.08); }
+    .scta-btn.secondary:hover { background: rgba(255,255,255,0.15); }
   </style>
 </head>
 <body>
@@ -700,6 +719,7 @@
       <li><a href="reviews.html" class="active">Reviews</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="visit.html">Visit</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
     <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nav-book">Book Now</a>
     <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');document.body.style.overflow=document.querySelector('.mobile-menu').classList.contains('active')?'hidden':''">
@@ -714,6 +734,7 @@
     <a href="reviews.html" class="active" onclick="closeMobileMenu()">Reviews</a>
     <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
     <a href="visit.html" onclick="closeMobileMenu()">Visit</a>
+    <a href="about.html" onclick="closeMobileMenu()">About</a>
     <div class="mm-divider"></div>
     <a href="https://www.vagaro.com/thenailladie" target="_blank" class="mm-book" onclick="closeMobileMenu()">Book Now</a>
     <p style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:1rem">Depoe Bay, Oregon Coast</p>
@@ -916,6 +937,19 @@
       &copy; 2026 The Nail Ladie. All rights reserved. &nbsp;|&nbsp; Depoe Bay, Oregon
     </div>
   </footer>
+
+  <!-- ===== STICKY CTA ===== -->
+  <div class="sticky-cta">
+    <div class="sticky-cta-inner">
+      <a href="tel:+15419921887" class="scta-btn secondary">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </a>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank" class="scta-btn primary">Book Now</a>
+      <a href="https://maps.google.com/maps?q=531+US-101,+Suites+K1-2,+Depoe+Bay,+OR+97341" target="_blank" class="scta-btn secondary">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </a>
+    </div>
+  </div>
 
   <script>
     // Mobile menu

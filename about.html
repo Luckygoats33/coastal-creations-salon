@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>About Heather | The Nail Ladie — Depoe Bay, Oregon</title>
+<meta name="description" content="Meet Heather, owner and sole artist at The Nail Ladie in Depoe Bay, Oregon. 18+ years of experience in nails, lash extensions, and hair. Private, one-on-one salon on the Oregon Coast.">
+<link rel="canonical" href="https://luckygoats33.github.io/coastal-creations-salon/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Heather | The Nail Ladie — Depoe Bay, Oregon">
+<meta property="og:description" content="Meet Heather — 18+ years of nail artistry, lash extensions, and hair. Private one-on-one salon in Depoe Bay on the Oregon Coast.">
+<meta property="og:url" content="https://luckygoats33.github.io/coastal-creations-salon/about.html">
+<meta name="geo.region" content="US-OR">
+<meta name="geo.placename" content="Depoe Bay">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Heather",
+  "jobTitle": "Nail Artist & Salon Owner",
+  "url": "https://luckygoats33.github.io/coastal-creations-salon/about.html",
+  "sameAs": [
+    "https://www.instagram.com/the_nail_ladie/",
+    "https://www.facebook.com/coastalcreationssalon",
+    "https://www.vagaro.com/thenailladie"
+  ],
+  "worksFor": {
+    "@type": "BeautySalon",
+    "name": "The Nail Ladie",
+    "url": "https://luckygoats33.github.io/coastal-creations-salon/",
+    "telephone": "+15419921887",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "531 US-101, Suites K1-2",
+      "addressLocality": "Depoe Bay",
+      "addressRegion": "OR",
+      "postalCode": "97341",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:45"
+      }
+    ]
+  }
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --bg: #FAF9F6;
+  --bg-alt: #F0EBE3;
+  --bg-sand: #E8DFD3;
+  --text: #1A1A1A;
+  --text-mid: #456068;
+  --text-light: #888;
+  --accent: #1B6B6A;
+  --accent-hover: #248F8D;
+  --accent-light: #D4EEEE;
+  --warm: #C4A06E;
+  --seafoam: #5EC4C4;
+  --ocean: #2A4F6B;
+  --driftwood: #8B7355;
+  --dark: #0B1E24;
+  --border: #B8D4DA;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-heading: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
+  --serif: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.7; padding-bottom: 76px; }
+a { color: inherit; text-decoration: none; }
+img, video { max-width: 100%; height: auto; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* TOP HEADER BAR */
+.top-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 102;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 6px clamp(1rem, 3vw, 2rem);
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.top-bar a {
+  color: #fff;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.3s;
+}
+.top-bar a:hover { color: var(--seafoam); }
+.top-bar svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 1.5;
+}
+.top-bar .tb-divider {
+  width: 1px; height: 12px;
+  background: rgba(255,255,255,0.25);
+}
+.top-bar.hidden { transform: translateY(-100%); transition: transform 0.3s var(--ease); }
+
+/* NAV */
+.nav {
+  position: fixed;
+  top: 30px; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s var(--ease);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+.nav.scrolled {
+  top: 0;
+  background: rgba(250, 250, 248, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 0 var(--border);
+  height: 64px;
+}
+
+.nav-logo { display: flex; align-items: center; z-index: 101; }
+.nav-logo-img {
+  height: 100px; width: auto;
+  transition: all 0.5s;
+}
+.nav.scrolled .nav-logo-img { height: 55px; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-mid);
+  transition: color 0.3s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: currentColor;
+  transition: width 0.3s var(--ease);
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--accent); }
+.nav-links a.active::after { width: 100%; background: var(--accent); }
+.nav.scrolled .nav-links a { color: var(--text-mid); text-shadow: none; }
+.nav.scrolled .nav-links a:hover { color: var(--text); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 52px; height: 52px;
+  padding: 0;
+  cursor: pointer;
+  z-index: 101;
+  background: none; border: none;
+}
+.nav-hamburger span {
+  display: block; width: 26px; height: 2.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s var(--ease);
+  transform-origin: center;
+}
+.nav-hamburger.active span { background: #fff; }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+.mobile-menu {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 99;
+  background: linear-gradient(170deg, #0D2F3F 0%, #1B6B6A 40%, #2A4F6B 100%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+  overflow: hidden;
+}
+.mobile-menu::before {
+  content: '';
+  position: absolute; bottom: -20px; left: 0; right: 0;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath d='M0,40 C240,80 480,10 720,50 C960,90 1200,20 1440,60 L1440,120 L0,120Z' fill='rgba(255,255,255,0.04)'/%3E%3Cpath d='M0,60 C360,20 720,90 1080,40 C1260,20 1380,50 1440,45 L1440,120 L0,120Z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") no-repeat bottom/100%;
+  pointer-events: none;
+}
+.mobile-menu.active { opacity: 1; pointer-events: auto; }
+.mobile-menu a {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+.mobile-menu a:hover { color: var(--seafoam); transform: translateX(6px); }
+.mobile-menu .mm-divider {
+  width: 40px; height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+.mobile-menu .mm-book {
+  margin-top: 0.5rem;
+  padding: 16px 44px;
+  border: 1px solid var(--seafoam);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all 0.3s;
+}
+.mobile-menu .mm-book:hover { background: var(--seafoam); color: var(--ocean); }
+
+.nav-book {
+  font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+  padding: 11px 26px; border: 1px solid var(--accent);
+  color: var(--accent); transition: all 0.3s var(--ease);
+}
+.nav-book:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* HERO */
+.hero {
+  margin-top: 110px;
+  height: 380px;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(170deg, #0D2F3F 0%, var(--accent) 50%, var(--ocean) 100%);
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(13,47,63,.4);
+  z-index: 1;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: clamp(30px, 5vw, 60px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,20 C480,55 960,5 1440,35 L1440,60 L0,60 Z' fill='%23FAF9F6'/%3E%3C/svg%3E") no-repeat bottom/100% 100%;
+  z-index: 3;
+}
+.hero-content { position: relative; z-index: 2; padding: 0 20px; }
+.hero h1 {
+  font-family: var(--font-heading);
+  color: #fff; font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400; margin-bottom: 10px;
+}
+.hero h1 em { font-style: italic; color: var(--seafoam); }
+.hero p {
+  color: rgba(255,255,255,.85); font-size: clamp(.95rem, 2vw, 1.15rem);
+  max-width: 520px; margin: 0 auto;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px clamp(16px, 5vw, 80px);
+  max-width: 1000px; margin: 0 auto;
+}
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--ocean);
+  margin-bottom: 8px;
+  position: relative; display: inline-block;
+}
+.section-title::after {
+  content: ''; display: block;
+  width: 50px; height: 3px;
+  background: var(--warm); border-radius: 3px;
+  margin-top: 8px;
+}
+.section-subtitle {
+  color: var(--text-mid); font-size: 1rem;
+  margin-bottom: 32px;
+}
+
+/* BIO */
+.bio-intro {
+  font-size: 1.1rem;
+  color: var(--ocean);
+  font-weight: 500;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.bio-text p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+/* FEATURE CARDS */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  border-top: 4px solid var(--accent);
+  transition: transform .2s, box-shadow .2s;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.feature-icon {
+  width: 48px; height: 48px;
+  background: var(--accent-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.feature-icon svg {
+  width: 22px; height: 22px;
+  stroke: var(--accent); fill: none; stroke-width: 1.5;
+}
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--ocean);
+  margin-bottom: 10px;
+}
+.feature-card p {
+  color: var(--text-mid);
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+/* INSTAGRAM EMBEDS */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.ig-grid blockquote {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* QUICK FACTS */
+.facts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+}
+.fact-chip {
+  background: var(--accent-light);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.fact-chip .fact-number {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+}
+.fact-chip .fact-label {
+  font-size: .85rem;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CTA */
+.cta-section {
+  text-align: center; padding: 60px 20px;
+  background: linear-gradient(180deg, var(--accent-light) 0%, var(--bg) 100%);
+  border-radius: 16px;
+  margin: 0 auto 40px;
+  max-width: 1000px;
+}
+.cta-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--ocean);
+  margin-bottom: 10px;
+}
+.cta-section p {
+  color: var(--text-mid);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--accent); color: #fff;
+  padding: 14px 36px; border-radius: 8px; border: none;
+  font-size: 1rem; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, transform .15s;
+}
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-secondary {
+  background: transparent; color: var(--accent);
+  padding: 14px 36px; border-radius: 8px;
+  border: 2px solid var(--accent);
+  font-size: 1rem; font-weight: 600; cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, color .2s, transform .15s;
+}
+.btn-secondary:hover {
+  background: var(--accent); color: #fff; transform: translateY(-1px);
+}
+
+/* FOOTER */
+.footer {
+  position: relative;
+  background: linear-gradient(170deg, #0E4D5A 0%, #1B6B6A 30%, #2A7B6B 60%, #0D3F4F 100%);
+  color: #fff; padding: 60px clamp(16px, 5vw, 80px) 0;
+}
+.footer-wave {
+  position: absolute; top: -40px; left: 0; width: 100%; height: 40px;
+  overflow: hidden;
+}
+.footer-wave svg { width: 100%; height: 100%; display: block; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1100px; margin: 0 auto;
+}
+.footer-col h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  color: var(--seafoam);
+}
+.footer-col p, .footer-col a {
+  color: rgba(255,255,255,.8);
+  font-size: .9rem; line-height: 1.8;
+  text-decoration: none;
+  display: block;
+}
+.footer-col a:hover { color: #fff; }
+.footer-brand {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.footer-social { display: flex; gap: 12px; margin-top: 12px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  border-radius: 50%; background: rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.footer-social a:hover { background: rgba(255,255,255,.25); }
+.footer-social svg { width: 16px; height: 16px; fill: #fff; }
+.footer-bottom {
+  margin-top: 40px; padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+  text-align: center; font-size: .82rem;
+  color: rgba(255,255,255,.5);
+  max-width: 1100px; margin-left: auto; margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .nav-links, .nav-book { display: none; }
+  .nav-hamburger { display: flex; margin-top: 15px; }
+  .mobile-menu { display: flex; }
+  .nav { height: 80px; }
+  .nav.scrolled { height: 64px; top: 0; }
+  .nav.scrolled .nav-hamburger { margin-top: 0; }
+  .nav-logo-img { height: 100px; }
+  .nav.scrolled .nav-logo-img { height: 50px; }
+  .top-bar { font-size: 0.7rem; gap: 1rem; padding: 7px 1rem; }
+  .top-bar .tb-divider { display: none; }
+  .top-bar svg { width: 14px; height: 14px; }
+  .hero { height: 280px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .ig-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .facts-row { grid-template-columns: 1fr 1fr; }
+}
+
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+  background: var(--dark, #0B1E24); border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.sticky-cta-inner { display: flex; gap: 10px; align-items: center; }
+.scta-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 14px; font-size: 0.65rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #fff; min-height: 48px; transition: background 0.3s; text-decoration: none;
+}
+.scta-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.scta-btn.primary { flex: 1; background: var(--accent, #1B6B6A); }
+.scta-btn.primary:hover { background: var(--accent-hover, #248F8D); }
+.scta-btn.secondary { width: 48px; background: rgba(255,255,255,0.08); }
+.scta-btn.secondary:hover { background: rgba(255,255,255,0.15); }
+</style>
+</head>
+<body>
+
+<!-- TOP HEADER BAR -->
+<div class="top-bar" id="top-bar">
+  <a href="tel:+15419921887">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    (541) 992-1887
+  </a>
+  <div class="tb-divider"></div>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 10h16M10 4v16"/></svg>
+    Book Online
+  </a>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img class="nav-logo-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260722_034833_b9e47356-4e68-4480-8c47-b789a8988ac9.png" alt="The Nail Ladie">
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="visit.html">Visit</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="nav-book">Book Now</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="document.querySelector('.nav-hamburger').classList.toggle('active');document.querySelector('.mobile-menu').classList.toggle('active');document.body.style.overflow=document.querySelector('.mobile-menu').classList.contains('active')?'hidden':''">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMobileMenu()">Gallery</a>
+  <a href="reviews.html" onclick="closeMobileMenu()">Reviews</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="visit.html" onclick="closeMobileMenu()">Visit</a>
+  <a href="about.html" onclick="closeMobileMenu()">About</a>
+  <div class="mm-divider"></div>
+  <a href="https://www.vagaro.com/thenailladie" target="_blank" class="mm-book" onclick="closeMobileMenu()">Book Now</a>
+  <p style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:1rem">Depoe Bay, Oregon Coast</p>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Meet <em>Heather</em></h1>
+    <p>The artist behind The Nail Ladie &mdash; 18+ years of passion, skill, and coastal creativity.</p>
+  </div>
+</header>
+
+<!-- BIO -->
+<section class="section">
+  <h2 class="section-title">Your Artist</h2>
+  <p class="section-subtitle">One chair. One client. One artist. Your appointment is entirely yours.</p>
+
+  <p class="bio-intro">Heather is the owner and sole artist at The Nail Ladie in Depoe Bay, Oregon. With over 18 years of professional experience in nails, lash extensions, and hair, she brings decades of refined skill to every appointment.</p>
+
+  <div class="bio-text">
+    <p>When you book with Heather, you're not just getting a service &mdash; you're getting her full, undivided attention. The Nail Ladie is a private, one-chair salon where you are the only client. No waiting room. No background noise from a dozen other stations. Just you, Heather, and a calm, focused experience crafted around what you want.</p>
+    <p>From gel manicures and Gel-X extensions to dip powder, nail art, lash extensions, and haircuts, Heather handles everything herself with the precision and care that only comes from 18+ years behind the chair. She specializes in custom designs &mdash; chrome finishes, cat eye, intricate stamping, rhinestone art, and one-of-a-kind creations that turn nails into wearable art.</p>
+    <p>Beyond her work as a nail tech, Heather is a nail educator and salon graphic designer. She teaches and mentors other nail professionals, and designs branding and graphics for salons across the industry. Her Instagram is a gallery of her latest work, tutorials, and creative inspiration.</p>
+  </div>
+
+  <div class="facts-row">
+    <div class="fact-chip">
+      <span class="fact-number">18+</span>
+      <span class="fact-label">Years Experience</span>
+    </div>
+    <div class="fact-chip">
+      <span class="fact-number">1:1</span>
+      <span class="fact-label">Private Sessions</span>
+    </div>
+    <div class="fact-chip">
+      <span class="fact-number">4</span>
+      <span class="fact-label">Days a Week</span>
+    </div>
+    <div class="fact-chip">
+      <span class="fact-number">60+</span>
+      <span class="fact-label">Services Offered</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES HER DIFFERENT -->
+<section class="section" style="padding-top:0;">
+  <h2 class="section-title">What Sets The Nail Ladie Apart</h2>
+  <p class="section-subtitle">More than a salon &mdash; an experience designed around you.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3>The Salon Experience</h3>
+      <p>A private, one-chair salon on the Oregon Coast. When you're here, you're the only client. No distractions, no rushing &mdash; just focused, personal care in a calm, intimate space overlooking Depoe Bay.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <h3>Nail Education</h3>
+      <p>Heather is passionate about elevating the nail industry. She teaches techniques, shares her knowledge with aspiring nail techs, and mentors professionals looking to refine their craft and grow their businesses.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h3>Salon Graphics</h3>
+      <p>Beyond nails, Heather designs professional graphics for other nail salons &mdash; logos, social media templates, branding materials, and promotional content that help fellow beauty professionals stand out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM REELS -->
+<section class="section" style="padding-top:0;">
+  <h2 class="section-title">See Heather's Work</h2>
+  <p class="section-subtitle">Follow along on Instagram <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" style="color:var(--accent);font-weight:600;">@the_nail_ladie</a></p>
+
+  <div class="ig-grid">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/the_nail_ladie/reel/Da0QgnSC9ie/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0; max-width:540px; min-width:280px; padding:0; width:100%;"></blockquote>
+
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/the_nail_ladie/reel/DZoFdZpiTUo/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0; max-width:540px; min-width:280px; padding:0; width:100%;"></blockquote>
+
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/the_nail_ladie/reel/DZYSHoSStAh/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0; max-width:540px; min-width:280px; padding:0; width:100%;"></blockquote>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Book with Heather</h2>
+  <p>Ready for a private, one-on-one salon experience? Schedule your appointment today.</p>
+  <div class="cta-buttons">
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Online
+    </a>
+    <a href="tel:+15419921887" class="btn-secondary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call (541) 992-1887
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 40" preserveAspectRatio="none">
+      <path d="M0,20 C240,40 480,0 720,20 C960,40 1200,0 1440,20 L1440,40 L0,40 Z" fill="#0E4D5A"/>
+    </svg>
+  </div>
+
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">The Nail Ladie</div>
+      <p>Premium nail care on the beautiful Oregon Coast.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/coastalcreationssalon" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/the_nail_ladie/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff"/></svg>
+        </a>
+        <a href="https://www.vagaro.com/thenailladie" target="_blank" rel="noopener" aria-label="Vagaro">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="#fff" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="#fff" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="#fff" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="#fff" stroke-width="2"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>531 US-101, Suites K1-2<br>Depoe Bay, OR 97341</p>
+      <a href="tel:+15419921887" style="margin-top:8px;">(541) 992-1887</a>
+      <p style="margin-top:8px;">Wed &ndash; Sat: 8 AM &ndash; 6:45 PM</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Book</h4>
+      <a href="https://www.vagaro.com/thenailladie" target="_blank">Book Online</a>
+      <a href="tel:+15419921887">Call to Book</a>
+      <p style="margin-top:8px;">Walk-ins welcome<br>when available</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2026 The Nail Ladie. All rights reserved. Depoe Bay, Oregon.
+  </div>
+</footer>
+
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta">
+  <div class="sticky-cta-inner">
+    <a href="tel:+15419921887" class="scta-btn secondary">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+    <a href="https://www.vagaro.com/thenailladie" target="_blank" class="scta-btn primary">Book Now</a>
+    <a href="https://maps.google.com/maps?q=531+US-101,+Suites+K1-2,+Depoe+Bay,+OR+97341" target="_blank" class="scta-btn secondary">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </a>
+  </div>
+</div>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script>
+// Mobile menu
+function closeMobileMenu() {
+  document.querySelector('.nav-hamburger').classList.remove('active');
+  document.querySelector('.mobile-menu').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Nav scroll + top bar hide
+const nav = document.getElementById('nav');
+const topBar = document.getElementById('top-bar');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 80;
+  nav.classList.toggle('scrolled', scrolled);
+  if (topBar) topBar.classList.toggle('hidden', scrolled);
+}, { passive: true });
+
+// Close mobile menu on resize to desktop
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 767) closeMobileMenu();
+});
+</script>
+</body>
+</html>
