@@ -1162,6 +1162,7 @@ img{{max-width:100%;height:auto}}
     <li><a href="../reviews.html">Reviews</a></li>
     <li><a href="../faq.html">FAQ</a></li>
     <li><a href="../visit.html">Visit</a></li>
+    <li><a href="index.html">Blog</a></li>
   </ul>
   <a href="{SITE['book']}" target="_blank" class="nav-book">Book Now</a>
 </nav>
@@ -1230,6 +1231,15 @@ def index_html(topics):
 <title>Blog | The Nail Ladie — Depoe Bay, Oregon Nail Salon</title>
 <meta name="description" content="Nail care tips, trends, and Oregon Coast beauty guides from The Nail Ladie in Depoe Bay. Gel nails, lash extensions, nail art, stamping, and more.">
 <link rel="canonical" href="{SITE['base']}/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | The Nail Ladie — Depoe Bay, Oregon Nail Salon">
+<meta property="og:description" content="Nail care tips, trends, and Oregon Coast beauty guides from The Nail Ladie in Depoe Bay. Gel nails, lash extensions, nail art, stamping, and more.">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033616_839dfb88-bfba-4425-9785-898d826be2b7.png">
+<meta property="og:url" content="{SITE['base']}/blog/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | The Nail Ladie — Depoe Bay, Oregon Nail Salon">
+<meta name="twitter:description" content="Nail care tips, trends, and Oregon Coast beauty guides from The Nail Ladie in Depoe Bay.">
+<meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3681BqEuWywySamoBS6St7ib1O7/hf_20260719_033616_839dfb88-bfba-4425-9785-898d826be2b7.png">
 <style>
 *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
 :root{{--bg:#FAF9F6;--accent:#1B6B6A;--accent-hover:#248F8D;--accent-light:#D4EEEE;--warm:#C4A06E;--seafoam:#5EC4C4;--ocean:#2A4F6B;--text:#1A1A1A;--text-mid:#555;--font-heading:Georgia,'Palatino Linotype','Book Antiqua',Palatino,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--border:#B8D4DA;--ease:cubic-bezier(.25,.46,.45,.94)}}
@@ -1299,6 +1309,7 @@ a{{color:var(--accent);text-decoration:none}}a:hover{{color:var(--accent-hover)}
     <li><a href="../reviews.html">Reviews</a></li>
     <li><a href="../faq.html">FAQ</a></li>
     <li><a href="../visit.html">Visit</a></li>
+    <li><a href="index.html">Blog</a></li>
   </ul>
   <a href="{SITE['book']}" target="_blank" class="nav-book">Book Now</a>
 </nav>
